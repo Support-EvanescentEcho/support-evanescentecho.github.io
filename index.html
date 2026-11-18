@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evanescent Echo — Introspective &amp; Sovereign Software</title>
+
+    <!-- Google Fonts: Cormorant Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body class="lang-en">
+
+    <header>
+        <a href="#" class="brand">
+            <img src="assets/evanescent_echo_seal.png" alt="Evanescent Echo Logo" class="brand-icon">
+            <span class="brand-title">Evanescent Echo</span>
+            <span class="brand-badge" id="studio-badge">Independent project</span>
+        </a>
+
+        <div class="controls">
+            <select id="theme-select" class="select-control" onchange="setTheme(this.value)">
+                <option value="light" id="theme-light">Light</option>
+                <option value="dark" id="theme-dark">Dark</option>
+                <option value="system" id="theme-system" selected>System</option>
+            </select>
+
+            <select id="lang-select" class="select-control" onchange="setLanguage(this.value)">
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-emblem-container">
+            <img src="assets/evanescent_echo_seal.png" alt="Evanescent Echo Studio Seal" class="hero-emblem">
+        </div>
+        <div class="hero-subtitle" id="hero-sub">The Sanctuary of Memory</div>
+        <h1 class="hero-title" id="hero-title">Evanescent Echo</h1>
+        <p class="hero-quote" id="hero-quote">
+            Crafting intimate, secure tools to preserve life's fleeting moments before they fade away.
+        </p>
+    </div>
+
+    <main>
+        <!-- Project Sanctuaries Catalog -->
+        <section>
+            <div class="section-header">
+                <h2 id="sec-projects-title">The Sanctuaries</h2>
+                <p id="sec-projects-sub">A small suite of free, private tools. Each one does a single thing, works offline, and is sustained by voluntary support.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- 1. Hours Lived -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <img src="assets/hours_lived_logo.png" alt="Hours Lived Logo" class="project-icon" onerror="this.src='assets/cassette_small.svg'">
+                            <div class="project-title-area">
+                                <h3>Hours Lived</h3>
+                                <div class="tagline" id="hl-tagline">Introspective Life Journal</div>
+                            </div>
+                        </div>
+
+                        <p class="project-description" id="hl-desc">
+                            A 100% offline-first diary calculating lived operational time and treasuring daily reflections. Features Time Capsules, cathartic writing, Zen canvas, and print-ready Light Novel PDF export.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag">Android</span>
+                            <span class="tag">Windows &amp; Linux (Alpha)</span>
+                            <span class="tag">AES-256 SQLCipher</span>
+                            <span class="tag">Zero Analytics</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://support-evanescentecho.github.io/hours-lived-web/" class="btn btn-primary" id="hl-btn-web">Official Support &amp; Docs</a>
+                        <a href="https://play.google.com/store/apps/details?id=dev.evanescentecho.hourslived" target="_blank" class="btn btn-outline" id="hl-btn-play">Google Play</a>
+                    </div>
+                </div>
+
+                <!-- 2. Echoes of Them -->
+                <div class="project-card">
+                    <div>
+                        <div class="project-header">
+                            <img src="assets/cassette_detail.svg" alt="Echoes of Them Logo" class="project-icon">
+                            <div class="project-title-area">
+                                <h3>Echoes of Them</h3>
+                                <div class="tagline" id="echoes-tagline">Oral Archive &amp; Shared Threads</div>
+                            </div>
+                        </div>
+
+                        <p class="project-description" id="echoes-desc">
+                            An intimate oral storytelling archive designed for deep face-to-face connection. Features Table Mode, strictly zero biometric voice cloning, sealed .echoes capsules, and an autonomous 40+ year HTML player.
+                        </p>
+
+                        <div class="project-tags">
+                            <span class="tag">Android</span>
+                            <span class="tag">Desktop (Windows &amp; Linux)</span>
+                            <span class="tag">libsodium</span>
+                            <span class="tag">Strictly Zero Voice AI</span>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="https://support-evanescentecho.github.io/echoes-of-them-web/" class="btn btn-primary" id="echoes-btn-web">Official Support &amp; Docs</a>
+                        <span class="btn btn-outline btn-pending" id="echoes-btn-play" aria-disabled="true">In development</span>
+                    </div>
+                </div>
+
+                <!-- 3. Upcoming Sanctuary -->
+                <div class="project-card upcoming">
+                    <div style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem;">✦</div>
+                    <h3 id="future-title">On the Horizon</h3>
+                    <p id="future-desc" style="font-size: 0.9rem; color: var(--text-muted); max-width: 260px;">
+                        More small tools are taking shape, one at a time, under the same principles.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Philosophy -->
+        <section>
+            <div class="section-header">
+                <h2 id="sec-philosophy-title">Principles</h2>
+                <p id="sec-philosophy-sub">Boundaries that every tool respects, without exception.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🔒</div>
+                    <h3 id="pil1-title">Local-First &amp; Zero Cloud</h3>
+                    <p id="pil1-desc">There are no servers: your thoughts, recordings and memories stay on your device. No tracking, no telemetry, no ads.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎙️</div>
+                    <h3 id="pil2-title">Human Integrity Above AI</h3>
+                    <p id="pil2-desc">No voice cloning, no biometric harvesting, no synthetic replacements. A real human voice is treated as an heirloom.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">⏳</div>
+                    <h3 id="pil3-title">40+ Year Digital Longevity</h3>
+                    <p id="pil3-desc">Open, universal standards (Ogg Opus, SQLite, self-contained HTML), so what you export can still be opened decades from now, even if this project disappears.</p>
+                </div>
+
+                <div class="pillar-card">
+                    <div class="pillar-icon">🍂</div>
+                    <h3 id="pil4-title">Artistic Nostalgia</h3>
+                    <p id="pil4-desc">Visual and melodic tributes inspired by works that explore impermanence and time (Plastic Memories, Clannad, Violet Evergarden, Frieren).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Companion Soundscape -->
+        <section>
+            <div class="banner-card">
+                <h3 id="banner-title">The Soundscape of Evanescent Echo</h3>
+                <p id="banner-desc">
+                    Every feature, line of code, and color scheme was created while listening to contemplative melodies about love, loss, and the passage of time.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://www.youtube.com/playlist?list=PLSMOooksGAReM" target="_blank" class="btn btn-outline" id="btn-yt">▶ Companion YouTube Playlist</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voluntary support -->
+        <section>
+            <div class="banner-card">
+                <h3 id="support-title">Free, and sustained by you</h3>
+                <p id="support-note">
+                    Every tool is free, with no ads and no telemetry. Evanescent Echo is made by one person and lives on voluntary support.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://ko-fi.com/evanescentecho" target="_blank" class="btn btn-primary" id="btn-kofi">Support Evanescent Echo on Ko-fi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://support-evanescentecho.github.io/hours-lived-web/">Hours Lived Web</a>
+            <span>·</span>
+            <a href="https://support-evanescentecho.github.io/echoes-of-them-web/">Echoes of Them Web</a>
+            <span>·</span>
+            <a href="https://ko-fi.com/evanescentecho">Ko-fi</a>
+            <span>·</span>
+            <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>
+        </div>
+        <p id="footer-copy">© 2026 Evanescent Echo. All rights reserved. Independently crafted.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

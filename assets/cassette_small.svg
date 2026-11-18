@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
+  <!-- Fondo base (Lienzo 32x32 para System Tray / Mini-Dock) -->
+  <rect width="32" height="32" rx="7" fill="#181615" />
+
+  <!-- Chasis del cassette (Grosor 1.5px exacto para pixel snapping) -->
+  <rect x="4" y="7" width="24" height="18" rx="2.5" fill="#24211E" stroke="#E3D5C5" stroke-width="1.5" />
+
+  <!-- Base inferior del cabezal -->
+  <path d="M 8,25 L 10.5,21.5 L 21.5,21.5 L 24,25" fill="#181615" stroke="#E3D5C5" stroke-width="1.2" stroke-linejoin="round" />
+
+  <!-- Ventana central de alto contraste -->
+  <rect x="8" y="11" width="16" height="8" rx="1.5" fill="#100F0E" stroke="#5E564F" stroke-width="1" />
+
+  <!-- Carretes sólidos que permanecen nítidos a 16x16 y 24x24 -->
+  <!-- Izquierdo -->
+  <circle cx="12" cy="15" r="2.2" fill="#E3D5C5" />
+  <circle cx="12" cy="15" r="0.75" fill="#100F0E" />
+
+  <!-- Derecho -->
+  <circle cx="20" cy="15" r="2.2" fill="#E3D5C5" />
+  <circle cx="20" cy="15" r="0.75" fill="#100F0E" />
+
+  <!-- Pulso de voz / cinta entre carretes en ámbar -->
+  <path d="M 14.2,15.5 L 15.2,14 L 16.8,16 L 17.8,15.5" fill="none" stroke="#D4A373" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
