@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your data and your access — Evanescent Echo</title>
+    <meta name="description" content="How the Evanescent Echo apps protect your data and adapt to how you read, see and move.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        /* Una sola página con un artículo por idioma; sin traducción, se muestra el inglés */
+        .trust { display: none; max-width: 760px; margin: 0 auto; line-height: 1.7; }
+        body:not(.lang-es) .trust[lang="en"], body.lang-es .trust[lang="es"] { display: block; }
+        .trust h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .trust h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; color: var(--primary); margin: 2.5rem 0 0.75rem; }
+        .trust h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
+        .trust p, .trust li { color: var(--text); margin-bottom: 0.75rem; }
+        .trust ul { padding-left: 1.25rem; }
+        .trust .lead { font-size: 1.15rem; color: var(--text-muted); }
+        .trust .notice { border: 1px solid var(--border); background: var(--surface-variant); border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+        .trust .notice strong { color: var(--primary); }
+        .trust a { color: var(--primary); }
+        .trust .back { display: inline-block; margin-bottom: 2rem; }
+        .translation-note { display: none; max-width: 760px; margin: 0 auto 1rem; color: var(--text-muted); font-size: 0.9rem; }
+        body:not(.lang-en):not(.lang-es) .translation-note { display: block; }
+    </style>
+</head>
+<body class="lang-en">
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="assets/evanescent_echo_seal.png" alt="" class="brand-icon">
+            <span class="brand-title">Evanescent Echo</span>
+        </a>
+
+        <div class="controls">
+            <select id="theme-select" class="select-control" onchange="setTheme(this.value)" aria-label="Theme">
+                <option value="light" id="theme-light">Light</option>
+                <option value="dark" id="theme-dark">Dark</option>
+                <option value="system" id="theme-system" selected>System</option>
+            </select>
+
+            <select id="lang-select" class="select-control" onchange="setLanguage(this.value)" aria-label="Language">
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <p class="translation-note">This page is only available in English and Spanish for now.</p>
+
+        <!-- ===================== ENGLISH ===================== -->
+        <article class="trust" lang="en">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Your data and your access</h1>
+            <p class="lead">Every Evanescent Echo app is built on two shared foundations: one that keeps what you write, record and photograph on your device and protected, and one that lets each app adapt to how you read, see and move. This page explains what they do for you, in plain words, and where their limits are.</p>
+
+            <div class="notice">
+                <p><strong>An honest note.</strong> We design the apps to follow recognised good practice for security and for digital accessibility (the Web Content Accessibility Guidelines, WCAG 2.2, level AA). That is our aim, not a certification: no regulator, certification body or independent auditor has reviewed or approved these apps or this page. We describe what the apps do, not that they comply with any law or standard.</p>
+            </div>
+
+            <h2>Your data</h2>
+
+            <h3>It stays on your device</h3>
+            <p>There are no accounts, no servers of ours and no cloud. The apps have no ads and send no analytics or telemetry. What you keep lives on your phone or computer, and only you decide whether it goes anywhere else.</p>
+
+            <h3>It is encrypted where it is stored</h3>
+            <p>Entries, recordings and photos are encrypted on the device using libsodium, a widely used and openly reviewed cryptography library. The key that opens them is protected by your system: the secure key storage on Android, the user's protected storage on Windows, and a password you choose on Linux, where there is no equivalent.</p>
+
+            <h3>Backups only you can open</h3>
+            <p>A backup file can be sealed with a password. The password is turned into a key with Argon2id, which makes guessing it slow, and the content is encrypted with XChaCha20-Poly1305, which also detects if the file was altered. Without the password the backup cannot be read, by anyone, including us. That also means a forgotten password cannot be recovered.</p>
+
+            <h3>Moving to another device, without the internet</h3>
+            <p>To pass your data from your phone to your computer (or back), both devices must be on the same local network. They pair with a short code shown on one screen and typed on the other; the code is never sent over the network, and a wrong code is not enough to learn anything about it. After a few failed attempts, or after ten minutes, the code stops working. Nothing goes through the internet or through any server.</p>
+
+            <h3>Permissions</h3>
+            <p>Each app asks only for what it uses. The network permission is there only for that local transfer between your own devices. An app that does not need it, like Sill, asks for no permissions at all.</p>
+
+            <h2>Your access</h2>
+            <p>Every setting below is applied for real across the whole app. If a setting cannot do what it says, it is not offered.</p>
+            <ul>
+                <li><strong>Text size up to 200 %</strong>, on top of the size you chose in your system.</li>
+                <li><strong>Bold text</strong> and <strong>easier reading</strong>: plain letters with more space between letters and lines, which can help with dyslexia.</li>
+                <li><strong>Contrast</strong>: the colours of every theme are adjusted so text stays readable against its background, and <strong>high contrast</strong> makes that difference stronger still.</li>
+                <li><strong>Colour vision</strong>: for people who see red, green or blue less, the app shifts colours so the differences they would miss show up in others. It corrects the colours; it does not imitate colour blindness.</li>
+                <li><strong>Reduce motion</strong>: continuous animations stop and transitions get shorter. Movement that guides something, like a breathing exercise, keeps going because it is the point of the exercise; anything that moves on its own can also be paused.</li>
+                <li><strong>Screen readers</strong>: buttons, switches and images are described, settings are grouped under headings, and messages such as "saved" or a transfer's progress are announced.</li>
+                <li><strong>On the computer</strong>: a regular menu bar (File, Go, View, Help) reachable with Alt or F10, keyboard shortcuts, a visible focus outline, and Esc to go back.</li>
+            </ul>
+
+            <h3>Known limits</h3>
+            <ul>
+                <li>We have not yet tested every screen by hand with TalkBack, NVDA or JAWS, or with keyboard only. Some older screens may still have buttons that a screen reader does not announce as buttons; we are going through them.</li>
+                <li>On Windows, screen readers need Java Access Bridge turned on once (run <code>jabswitch -enable</code>). On Linux, the desktop versions cannot be used with a screen reader yet.</li>
+                <li>Some decorative illustrations keep their own colours.</li>
+            </ul>
+
+            <h2>Tell us</h2>
+            <p>If something gets in your way — a screen you cannot read, a button you cannot reach, a claim on this page that is wrong — please write to <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Evanescent Echo is made by one person; every message is read.</p>
+            <p class="lead">Last updated: November 2026.</p>
+        </article>
+
+        <!-- ===================== ESPAÑOL ===================== -->
+        <article class="trust" lang="es">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Tus datos y tu acceso</h1>
+            <p class="lead">Todas las apps de Evanescent Echo se apoyan en dos bases comunes: una mantiene lo que escribes, grabas y fotografías en tu dispositivo y protegido, y otra permite que cada app se adapte a cómo lees, ves y te mueves. Esta página explica qué hacen por ti, con palabras sencillas, y dónde están sus límites.</p>
+
+            <div class="notice">
+                <p><strong>Una nota honesta.</strong> Diseñamos las apps para seguir buenas prácticas reconocidas de seguridad y de accesibilidad digital (las Pautas de Accesibilidad para el Contenido Web, WCAG 2.2, nivel AA). Es nuestro objetivo, no una certificación: ningún regulador, organismo de certificación ni auditor independiente ha revisado ni aprobado estas apps ni esta página. Describimos lo que hacen las apps, no que cumplan ninguna ley ni norma.</p>
+            </div>
+
+            <h2>Tus datos</h2>
+
+            <h3>Se quedan en tu dispositivo</h3>
+            <p>No hay cuentas, ni servidores nuestros, ni nube. Las apps no tienen anuncios ni envían estadísticas ni telemetría. Lo que guardas vive en tu teléfono o tu ordenador, y solo tú decides si va a algún otro sitio.</p>
+
+            <h3>Se guardan cifrados</h3>
+            <p>Las entradas, grabaciones y fotos se cifran en el propio dispositivo con libsodium, una librería de criptografía muy usada y revisada públicamente. La llave que las abre la protege tu sistema: el almacén seguro de llaves en Android, el almacenamiento protegido del usuario en Windows y, en Linux, donde no hay nada equivalente, una contraseña que eliges tú.</p>
+
+            <h3>Copias que solo tú puedes abrir</h3>
+            <p>Una copia de seguridad puede sellarse con contraseña. La contraseña se convierte en llave con Argon2id, que hace lento adivinarla, y el contenido se cifra con XChaCha20-Poly1305, que además detecta si el archivo se ha alterado. Sin la contraseña nadie puede leer la copia, tampoco nosotros. Eso también significa que una contraseña olvidada no se puede recuperar.</p>
+
+            <h3>Pasar a otro dispositivo, sin internet</h3>
+            <p>Para llevar tus datos del teléfono al ordenador (o al revés), los dos tienen que estar en la misma red local. Se emparejan con un código corto que aparece en una pantalla y se escribe en la otra; el código nunca viaja por la red, y un código equivocado no sirve para averiguar nada de él. Tras unos pocos intentos fallidos, o a los diez minutos, el código deja de valer. Nada pasa por internet ni por ningún servidor.</p>
+
+            <h3>Permisos</h3>
+            <p>Cada app pide solo lo que usa. El permiso de red está solo para ese paso local entre tus propios dispositivos. Una app que no lo necesita, como Sill, no pide ningún permiso.</p>
+
+            <h2>Tu acceso</h2>
+            <p>Cada ajuste de esta lista se aplica de verdad en toda la app. Si un ajuste no puede hacer lo que dice, no se ofrece.</p>
+            <ul>
+                <li><strong>Texto hasta el 200 %</strong>, sobre el tamaño que elegiste en tu sistema.</li>
+                <li><strong>Texto en negrita</strong> y <strong>lectura más fácil</strong>: letras sencillas con más espacio entre letras y líneas, que puede ayudar con la dislexia.</li>
+                <li><strong>Contraste</strong>: los colores de cada tema se ajustan para que el texto se lea bien sobre su fondo, y el <strong>alto contraste</strong> aumenta aún más esa diferencia.</li>
+                <li><strong>Visión del color</strong>: para quien distingue peor el rojo, el verde o el azul, la app desplaza los colores para que las diferencias que no ve aparezcan en otros. Corrige los colores; no imita el daltonismo.</li>
+                <li><strong>Reducir movimiento</strong>: las animaciones continuas se detienen y las transiciones se acortan. El movimiento que guía algo, como un ejercicio de respiración, sigue porque es el sentido del ejercicio; todo lo que se mueve solo también se puede pausar.</li>
+                <li><strong>Lectores de pantalla</strong>: botones, interruptores e imágenes tienen descripción, los ajustes se agrupan bajo encabezados y se anuncian mensajes como "guardado" o el progreso de una transferencia.</li>
+                <li><strong>En el ordenador</strong>: una barra de menús normal (Archivo, Ir, Ver, Ayuda) a la que se llega con Alt o F10, atajos de teclado, un contorno de foco visible y Esc para volver.</li>
+            </ul>
+
+            <h3>Límites conocidos</h3>
+            <ul>
+                <li>Aún no hemos probado a mano cada pantalla con TalkBack, NVDA o JAWS, ni solo con teclado. Algunas pantallas más antiguas todavía pueden tener botones que el lector de pantalla no anuncia como botones; las estamos revisando.</li>
+                <li>En Windows, los lectores de pantalla necesitan activar Java Access Bridge una vez (ejecuta <code>jabswitch -enable</code>). En Linux, las versiones de escritorio todavía no se pueden usar con lector de pantalla.</li>
+                <li>Algunas ilustraciones decorativas mantienen sus propios colores.</li>
+            </ul>
+
+            <h2>Cuéntanos</h2>
+            <p>Si algo te lo pone difícil —una pantalla que no puedes leer, un botón al que no llegas, algo de esta página que no es cierto—, escribe a <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Evanescent Echo lo hace una sola persona; se leen todos los mensajes.</p>
+            <p class="lead">Última actualización: noviembre de 2026.</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Evanescent Echo</a>
+            <span>·</span>
+            <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>
+        </div>
+        <p id="footer-copy">© 2026 Evanescent Echo. All rights reserved. Independently crafted.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

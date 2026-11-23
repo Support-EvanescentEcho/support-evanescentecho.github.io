@@ -61,7 +61,8 @@ const translations = {
         supportTitle: "Free, and sustained by you",
         supportNote: "Every tool is free, with no ads and no telemetry. Evanescent Echo is made by one person and lives on voluntary support.",
         btnKofi: "Support Evanescent Echo on Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. All rights reserved. Independently crafted."
+        footerCopy: "© 2026 Evanescent Echo. All rights reserved. Independently crafted.",
+        footerTrust: "Your data and your access"
     },
     es: {
         studioBadge: "Proyecto independiente",
@@ -99,7 +100,8 @@ const translations = {
         supportTitle: "Gratis, y sostenido por ti",
         supportNote: "Todas las herramientas son gratuitas, sin anuncios ni telemetría. Evanescent Echo lo hace una sola persona y vive del apoyo voluntario.",
         btnKofi: "Apoya a Evanescent Echo en Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. Todos los derechos reservados. Desarrollo artesanal independiente."
+        footerCopy: "© 2026 Evanescent Echo. Todos los derechos reservados. Desarrollo artesanal independiente.",
+        footerTrust: "Tus datos y tu acceso"
     },
     de: {
         studioBadge: "Unabhängiges Projekt",
@@ -137,7 +139,8 @@ const translations = {
         supportTitle: "Kostenlos, getragen von Ihnen",
         supportNote: "Alle Werkzeuge sind kostenlos, ohne Werbung und ohne Telemetrie. Evanescent Echo wird von einer einzigen Person entwickelt und lebt von freiwilliger Unterstützung.",
         btnKofi: "Evanescent Echo auf Ko-fi unterstützen",
-        footerCopy: "© 2026 Evanescent Echo. Alle Rechte vorbehalten. Unabhängig entwickelt."
+        footerCopy: "© 2026 Evanescent Echo. Alle Rechte vorbehalten. Unabhängig entwickelt.",
+        footerTrust: "Deine Daten und dein Zugang"
     },
     fr: {
         studioBadge: "Projet indépendant",
@@ -175,7 +178,8 @@ const translations = {
         supportTitle: "Gratuit, et soutenu par vous",
         supportNote: "Tous les outils sont gratuits, sans publicité ni télémétrie. Evanescent Echo est l'œuvre d'une seule personne et vit du soutien volontaire.",
         btnKofi: "Soutenir Evanescent Echo sur Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. Tous droits réservés. Développement indépendant."
+        footerCopy: "© 2026 Evanescent Echo. Tous droits réservés. Développement indépendant.",
+        footerTrust: "Vos données et votre accès"
     },
     it: {
         studioBadge: "Progetto indipendente",
@@ -213,7 +217,8 @@ const translations = {
         supportTitle: "Gratuito, e sostenuto da te",
         supportNote: "Tutti gli strumenti sono gratuiti, senza pubblicità né telemetria. Evanescent Echo è realizzato da una sola persona e vive del supporto volontario.",
         btnKofi: "Sostieni Evanescent Echo su Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. Tutti i diritti riservati. Sviluppo artigianale indipendente."
+        footerCopy: "© 2026 Evanescent Echo. Tutti i diritti riservati. Sviluppo artigianale indipendente.",
+        footerTrust: "I tuoi dati e il tuo accesso"
     },
     ja: {
         studioBadge: "個人開発",
@@ -251,7 +256,8 @@ const translations = {
         supportTitle: "無料、そしてあなたの支えで",
         supportNote: "すべてのツールは無料で、広告もテレメトリーもありません。Evanescent Echo はひとりで開発しており、自発的な支援によって続いています。",
         btnKofi: "Ko-fi で Evanescent Echo を応援する",
-        footerCopy: "© 2026 Evanescent Echo. All rights reserved. 個人開発。"
+        footerCopy: "© 2026 Evanescent Echo. All rights reserved. 個人開発。",
+        footerTrust: "データとアクセシビリティ"
     },
     ko: {
         studioBadge: "1인 개발",
@@ -289,7 +295,8 @@ const translations = {
         supportTitle: "무료, 그리고 당신의 후원으로",
         supportNote: "모든 도구는 무료이며 광고도 텔레메트리도 없습니다. Evanescent Echo는 한 사람이 만들고, 자발적인 후원으로 이어집니다.",
         btnKofi: "Ko-fi에서 Evanescent Echo 후원하기",
-        footerCopy: "© 2026 Evanescent Echo. All rights reserved. 독립 장인 개발."
+        footerCopy: "© 2026 Evanescent Echo. All rights reserved. 독립 장인 개발.",
+        footerTrust: "데이터와 접근성"
     },
     pt: {
         studioBadge: "Projeto independente",
@@ -327,7 +334,8 @@ const translations = {
         supportTitle: "Gratuito, e sustentado por você",
         supportNote: "Todas as ferramentas são gratuitas, sem anúncios nem telemetria. A Evanescent Echo é feita por uma única pessoa e vive de apoio voluntário.",
         btnKofi: "Apoie a Evanescent Echo no Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. Todos os direitos reservados. Desenvolvimento independente."
+        footerCopy: "© 2026 Evanescent Echo. Todos os direitos reservados. Desenvolvimento independente.",
+        footerTrust: "Seus dados e seu acesso"
     },
     ru: {
         studioBadge: "Независимый проект",
@@ -365,7 +373,8 @@ const translations = {
         supportTitle: "Бесплатно — благодаря вам",
         supportNote: "Все инструменты бесплатны, без рекламы и телеметрии. Evanescent Echo создаёт один человек, и проект живёт на добровольную поддержку.",
         btnKofi: "Поддержать Evanescent Echo на Ko-fi",
-        footerCopy: "© 2026 Evanescent Echo. Все права защищены. Независимая разработка."
+        footerCopy: "© 2026 Evanescent Echo. Все права защищены. Независимая разработка.",
+        footerTrust: "Ваши данные и доступность"
     },
     zh: {
         studioBadge: "个人开发",
@@ -403,7 +412,8 @@ const translations = {
         supportTitle: "免费，因您而延续",
         supportNote: "所有工具均免费，无广告、无遥测。Evanescent Echo 由一个人开发，依靠自愿支持维持。",
         btnKofi: "在 Ko-fi 上支持 Evanescent Echo",
-        footerCopy: "© 2026 Evanescent Echo. 保留所有权利。独立手工打造。"
+        footerCopy: "© 2026 Evanescent Echo. 保留所有权利。独立手工打造。",
+        footerTrust: "你的数据与无障碍"
     }
 };
 
@@ -451,7 +461,8 @@ function setLanguage(lang) {
         'support-title': dict.supportTitle,
         'support-note': dict.supportNote,
         'btn-kofi': dict.btnKofi,
-        'footer-copy': dict.footerCopy
+        'footer-copy': dict.footerCopy,
+        'footer-trust': dict.footerTrust
     };
 
     for (const [id, val] of Object.entries(map)) {
