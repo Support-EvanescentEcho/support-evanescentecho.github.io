@@ -70,19 +70,19 @@
             <p class="lead">Every Evanescent Echo app is built on two shared foundations: one that keeps what you write, record and photograph on your device and protected, and one that lets each app adapt to how you read, see and move. This page explains what they do for you, in plain words, and where their limits are.</p>
 
             <div class="notice">
-                <p><strong>An honest note.</strong> We design the apps to follow recognised good practice for security and for digital accessibility (the Web Content Accessibility Guidelines, WCAG 2.2, level AA). That is our aim, not a certification: no regulator, certification body or independent auditor has reviewed or approved these apps or this page. We describe what the apps do, not that they comply with any law or standard.</p>
+                <p><strong>An honest note.</strong> I design the apps to follow recognised good practice for security and for digital accessibility (the Web Content Accessibility Guidelines, WCAG 2.2, level AA). That is the aim, not a certification: no regulator, certification body or independent auditor has reviewed or approved these apps or this page. This page describes what the apps do; it does not claim that they comply with any law or standard.</p>
             </div>
 
             <h2>Your data</h2>
 
             <h3>It stays on your device</h3>
-            <p>There are no accounts, no servers of ours and no cloud. The apps have no ads and send no analytics or telemetry. What you keep lives on your phone or computer, and only you decide whether it goes anywhere else.</p>
+            <p>There are no accounts, no servers and no cloud. The apps have no ads and send no analytics or telemetry. What you keep lives on your phone or computer, and only you decide whether it goes anywhere else.</p>
 
             <h3>It is encrypted where it is stored</h3>
             <p>Entries, recordings and photos are encrypted on the device using libsodium, a widely used and openly reviewed cryptography library. The key that opens them is protected by your system: the secure key storage on Android, the user's protected storage on Windows, and a password you choose on Linux, where there is no equivalent.</p>
 
             <h3>Backups only you can open</h3>
-            <p>A backup file can be sealed with a password. The password is turned into a key with Argon2id, which makes guessing it slow, and the content is encrypted with XChaCha20-Poly1305, which also detects if the file was altered. Without the password the backup cannot be read, by anyone, including us. That also means a forgotten password cannot be recovered.</p>
+            <p>A backup file can be sealed with a password. The password is turned into a key with Argon2id, which makes guessing it slow, and the content is encrypted with XChaCha20-Poly1305, which also detects if the file was altered. Without the password nobody can read the backup, not even me. That also means a forgotten password cannot be recovered.</p>
 
             <h3>Moving to another device, without the internet</h3>
             <p>To pass your data from your phone to your computer (or back), both devices must be on the same local network. They pair with a short code shown on one screen and typed on the other; the code is never sent over the network, and a wrong code is not enough to learn anything about it. After a few failed attempts, or after ten minutes, the code stops working. Nothing goes through the internet or through any server.</p>
@@ -104,13 +104,13 @@
 
             <h3>Known limits</h3>
             <ul>
-                <li>We have not yet tested every screen by hand with TalkBack, NVDA or JAWS, or with keyboard only. Some older screens may still have buttons that a screen reader does not announce as buttons; we are going through them.</li>
+                <li>Not every screen has been tested by hand yet with TalkBack, NVDA or JAWS, or with keyboard only. Some older screens may still have buttons that a screen reader does not announce as buttons; I am going through them.</li>
                 <li>On Windows, screen readers need Java Access Bridge turned on once (run <code>jabswitch -enable</code>). On Linux, the desktop versions cannot be used with a screen reader yet.</li>
                 <li>Some decorative illustrations keep their own colours.</li>
             </ul>
 
-            <h2>Tell us</h2>
-            <p>If something gets in your way — a screen you cannot read, a button you cannot reach, a claim on this page that is wrong — please write to <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Evanescent Echo is made by one person; every message is read.</p>
+            <h2>Write to me</h2>
+            <p>If something gets in your way — a screen you cannot read, a button you cannot reach, a claim on this page that is wrong — please write to <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. I read every message myself.</p>
             <p class="lead">Last updated: November 2026.</p>
         </article>
 
@@ -121,19 +121,19 @@
             <p class="lead">Todas las apps de Evanescent Echo se apoyan en dos bases comunes: una mantiene lo que escribes, grabas y fotografías en tu dispositivo y protegido, y otra permite que cada app se adapte a cómo lees, ves y te mueves. Esta página explica qué hacen por ti, con palabras sencillas, y dónde están sus límites.</p>
 
             <div class="notice">
-                <p><strong>Una nota honesta.</strong> Diseñamos las apps para seguir buenas prácticas reconocidas de seguridad y de accesibilidad digital (las Pautas de Accesibilidad para el Contenido Web, WCAG 2.2, nivel AA). Es nuestro objetivo, no una certificación: ningún regulador, organismo de certificación ni auditor independiente ha revisado ni aprobado estas apps ni esta página. Describimos lo que hacen las apps, no que cumplan ninguna ley ni norma.</p>
+                <p><strong>Una nota honesta.</strong> Diseño las apps para seguir buenas prácticas reconocidas de seguridad y de accesibilidad digital (las Pautas de Accesibilidad para el Contenido Web, WCAG 2.2, nivel AA). Es el objetivo, no una certificación: ningún regulador, organismo de certificación ni auditor independiente ha revisado ni aprobado estas apps ni esta página. Esta página describe lo que hacen las apps; no afirma que cumplan ninguna ley ni norma.</p>
             </div>
 
             <h2>Tus datos</h2>
 
             <h3>Se quedan en tu dispositivo</h3>
-            <p>No hay cuentas, ni servidores nuestros, ni nube. Las apps no tienen anuncios ni envían estadísticas ni telemetría. Lo que guardas vive en tu teléfono o tu ordenador, y solo tú decides si va a algún otro sitio.</p>
+            <p>No hay cuentas, ni servidores, ni nube. Las apps no tienen anuncios ni envían estadísticas ni telemetría. Lo que guardas vive en tu teléfono o tu ordenador, y solo tú decides si va a algún otro sitio.</p>
 
             <h3>Se guardan cifrados</h3>
             <p>Las entradas, grabaciones y fotos se cifran en el propio dispositivo con libsodium, una librería de criptografía muy usada y revisada públicamente. La llave que las abre la protege tu sistema: el almacén seguro de llaves en Android, el almacenamiento protegido del usuario en Windows y, en Linux, donde no hay nada equivalente, una contraseña que eliges tú.</p>
 
             <h3>Copias que solo tú puedes abrir</h3>
-            <p>Una copia de seguridad puede sellarse con contraseña. La contraseña se convierte en llave con Argon2id, que hace lento adivinarla, y el contenido se cifra con XChaCha20-Poly1305, que además detecta si el archivo se ha alterado. Sin la contraseña nadie puede leer la copia, tampoco nosotros. Eso también significa que una contraseña olvidada no se puede recuperar.</p>
+            <p>Una copia de seguridad puede sellarse con contraseña. La contraseña se convierte en llave con Argon2id, que hace lento adivinarla, y el contenido se cifra con XChaCha20-Poly1305, que además detecta si el archivo se ha alterado. Sin la contraseña nadie puede leer la copia, ni siquiera yo. Eso también significa que una contraseña olvidada no se puede recuperar.</p>
 
             <h3>Pasar a otro dispositivo, sin internet</h3>
             <p>Para llevar tus datos del teléfono al ordenador (o al revés), los dos tienen que estar en la misma red local. Se emparejan con un código corto que aparece en una pantalla y se escribe en la otra; el código nunca viaja por la red, y un código equivocado no sirve para averiguar nada de él. Tras unos pocos intentos fallidos, o a los diez minutos, el código deja de valer. Nada pasa por internet ni por ningún servidor.</p>
@@ -155,13 +155,13 @@
 
             <h3>Límites conocidos</h3>
             <ul>
-                <li>Aún no hemos probado a mano cada pantalla con TalkBack, NVDA o JAWS, ni solo con teclado. Algunas pantallas más antiguas todavía pueden tener botones que el lector de pantalla no anuncia como botones; las estamos revisando.</li>
+                <li>Todavía no se ha probado a mano cada pantalla con TalkBack, NVDA o JAWS, ni solo con teclado. Algunas pantallas más antiguas aún pueden tener botones que el lector de pantalla no anuncia como botones; las estoy revisando.</li>
                 <li>En Windows, los lectores de pantalla necesitan activar Java Access Bridge una vez (ejecuta <code>jabswitch -enable</code>). En Linux, las versiones de escritorio todavía no se pueden usar con lector de pantalla.</li>
                 <li>Algunas ilustraciones decorativas mantienen sus propios colores.</li>
             </ul>
 
-            <h2>Cuéntanos</h2>
-            <p>Si algo te lo pone difícil —una pantalla que no puedes leer, un botón al que no llegas, algo de esta página que no es cierto—, escribe a <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Evanescent Echo lo hace una sola persona; se leen todos los mensajes.</p>
+            <h2>Escríbeme</h2>
+            <p>Si algo te lo pone difícil —una pantalla que no puedes leer, un botón al que no llegas, algo de esta página que no es cierto—, escríbeme a <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leo cada mensaje personalmente.</p>
             <p class="lead">Última actualización: noviembre de 2026.</p>
         </article>
     </main>
