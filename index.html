@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Suite accessibility layer (WCAG 2.2 AA base + visitor preferences) -->
+    <link rel="stylesheet" href="/evanescent-web-a11y/a11y.css">
+    <script src="/evanescent-web-a11y/a11y.js"></script>
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body class="lang-en">
@@ -22,14 +25,14 @@
             <span class="brand-badge" id="studio-badge">Independent project</span>
         </a>
 
-        <div class="controls">
-            <select id="theme-select" class="select-control" onchange="setTheme(this.value)">
+        <div class="controls" data-a11y-slot>
+            <select id="theme-select" class="select-control" onchange="setTheme(this.value)" aria-label="Theme">
                 <option value="light" id="theme-light">Light</option>
                 <option value="dark" id="theme-dark">Dark</option>
                 <option value="system" id="theme-system" selected>System</option>
             </select>
 
-            <select id="lang-select" class="select-control" onchange="setLanguage(this.value)">
+            <select id="lang-select" class="select-control" onchange="setLanguage(this.value)" aria-label="Language">
                 <option value="en" selected>English</option>
                 <option value="es">Español</option>
                 <option value="de">Deutsch</option>
@@ -44,7 +47,7 @@
         </div>
     </header>
 
-    <div class="hero">
+    <div class="hero" role="region" aria-labelledby="hero-title">
         <div class="hero-emblem-container">
             <img src="assets/evanescent_echo_seal.png" alt="Evanescent Echo Studio Seal" class="hero-emblem">
         </div>

@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Suite accessibility layer (WCAG 2.2 AA base + visitor preferences) -->
+    <link rel="stylesheet" href="/evanescent-web-a11y/a11y.css">
+    <script src="/evanescent-web-a11y/a11y.js"></script>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <style>
         /* Una sola página con un artículo por idioma */
@@ -36,7 +39,7 @@
             <span class="brand-title">Evanescent Echo</span>
         </a>
 
-        <div class="controls">
+        <div class="controls" data-a11y-slot>
             <select id="theme-select" class="select-control" onchange="setTheme(this.value)" aria-label="Theme">
                 <option value="light" id="theme-light">Light</option>
                 <option value="dark" id="theme-dark">Dark</option>
@@ -96,12 +99,14 @@
                 <li><strong>Reduce motion</strong>: continuous animations stop and transitions get shorter. Movement that guides something, like a breathing exercise, keeps going because it is the point of the exercise; anything that moves on its own can also be paused.</li>
                 <li><strong>Screen readers</strong>: buttons, switches and images are described, settings are grouped under headings, and messages such as "saved" or a transfer's progress are announced.</li>
                 <li><strong>On the computer</strong>: a regular menu bar (File, Go, View, Help) reachable with Alt or F10, keyboard shortcuts, a visible focus outline, and Esc to go back.</li>
+                <li><strong>On these websites</strong>: an Accessibility button lets you choose text size up to 200 %, a readable typeface, more space between lines and letters, underlined links, high contrast, less motion and a stronger focus outline. Your choices stay in your browser and apply to every Evanescent Echo website.</li>
             </ul>
 
             <h3>Known limits</h3>
             <ul>
                 <li>Not every screen has been tested by hand yet with TalkBack, NVDA or JAWS, or with keyboard only. Some older screens may still have buttons that a screen reader does not announce as buttons; I am going through them.</li>
                 <li>On Windows, screen readers need Java Access Bridge turned on once (run <code>jabswitch -enable</code>). On Linux, the desktop versions cannot be used with a screen reader yet.</li>
+                <li>The websites have been checked with automated tools (axe) in light, dark and high-contrast modes, but not yet by hand with a screen reader.</li>
                 <li>Some decorative illustrations keep their own colours.</li>
             </ul>
 
@@ -147,12 +152,14 @@
                 <li><strong>Reducir movimiento</strong>: las animaciones continuas se detienen y las transiciones se acortan. El movimiento que guía algo, como un ejercicio de respiración, sigue porque es el sentido del ejercicio; todo lo que se mueve solo también se puede pausar.</li>
                 <li><strong>Lectores de pantalla</strong>: botones, interruptores e imágenes tienen descripción, los ajustes se agrupan bajo encabezados y se anuncian mensajes como "guardado" o el progreso de una transferencia.</li>
                 <li><strong>En el ordenador</strong>: una barra de menús normal (Archivo, Ir, Ver, Ayuda) a la que se llega con Alt o F10, atajos de teclado, un contorno de foco visible y Esc para volver.</li>
+                <li><strong>En estas webs</strong>: un botón de Accesibilidad te deja elegir el tamaño del texto hasta el 200 %, una tipografía legible, más espacio entre líneas y letras, enlaces subrayados, alto contraste, menos movimiento y un contorno de foco más visible. Tus elecciones se quedan en tu navegador y se aplican a todas las webs de Evanescent Echo.</li>
             </ul>
 
             <h3>Límites conocidos</h3>
             <ul>
                 <li>Todavía no se ha probado a mano cada pantalla con TalkBack, NVDA o JAWS, ni solo con teclado. Algunas pantallas más antiguas aún pueden tener botones que el lector de pantalla no anuncia como botones; las estoy revisando.</li>
                 <li>En Windows, los lectores de pantalla necesitan activar Java Access Bridge una vez (ejecuta <code>jabswitch -enable</code>). En Linux, las versiones de escritorio todavía no se pueden usar con lector de pantalla.</li>
+                <li>Las webs se han revisado con herramientas automáticas (axe) en modo claro, oscuro y de alto contraste, pero todavía no a mano con un lector de pantalla.</li>
                 <li>Algunas ilustraciones decorativas mantienen sus propios colores.</li>
             </ul>
 
@@ -198,12 +205,14 @@
                 <li><strong>Bewegung reduzieren</strong>: Dauerhafte Animationen halten an und Übergänge werden kürzer. Bewegung, die etwas anleitet, etwa eine Atemübung, läuft weiter, weil sie der Sinn der Übung ist; alles, was sich von selbst bewegt, lässt sich auch anhalten.</li>
                 <li><strong>Screenreader</strong>: Schaltflächen, Schalter und Bilder sind beschrieben, Einstellungen sind unter Überschriften gruppiert, und Meldungen wie „gespeichert“ oder der Fortschritt einer Übertragung werden angesagt.</li>
                 <li><strong>Am Computer</strong>: eine normale Menüleiste (Datei, Gehe zu, Ansicht, Hilfe), erreichbar mit Alt oder F10, Tastenkürzel, ein sichtbarer Fokusrahmen und Esc zum Zurückgehen.</li>
+                <li><strong>Auf diesen Websites</strong>: Über eine Schaltfläche „Barrierefreiheit“ wählst du Textgröße bis 200 %, eine gut lesbare Schrift, mehr Abstand zwischen Zeilen und Buchstaben, unterstrichene Links, hohen Kontrast, weniger Bewegung und einen deutlicheren Fokusrahmen. Deine Auswahl bleibt in deinem Browser und gilt für alle Evanescent-Echo-Websites.</li>
             </ul>
 
             <h3>Bekannte Grenzen</h3>
             <ul>
                 <li>Noch nicht jeder Bildschirm wurde von Hand mit TalkBack, NVDA oder JAWS oder nur mit der Tastatur getestet. Einige ältere Bildschirme haben vielleicht noch Schaltflächen, die ein Screenreader nicht als Schaltflächen ansagt; ich gehe sie gerade durch.</li>
                 <li>Unter Windows brauchen Screenreader einmalig die Java Access Bridge (führe <code>jabswitch -enable</code> aus). Unter Linux lassen sich die Desktop-Versionen noch nicht mit einem Screenreader nutzen.</li>
+                <li>Die Websites wurden mit automatischen Werkzeugen (axe) im hellen, dunklen und kontrastreichen Modus geprüft, aber noch nicht von Hand mit einem Screenreader.</li>
                 <li>Einige dekorative Illustrationen behalten ihre eigenen Farben.</li>
             </ul>
 
@@ -249,12 +258,14 @@
                 <li><strong>Réduire les animations</strong> : les animations continues s’arrêtent et les transitions sont plus courtes. Un mouvement qui guide quelque chose, comme un exercice de respiration, continue parce qu’il est le but de l’exercice ; tout ce qui bouge tout seul peut aussi être mis en pause.</li>
                 <li><strong>Lecteurs d’écran</strong> : les boutons, interrupteurs et images sont décrits, les réglages sont regroupés sous des titres, et des messages comme « enregistré » ou la progression d’un transfert sont annoncés.</li>
                 <li><strong>Sur l’ordinateur</strong> : une barre de menus classique (Fichier, Aller, Affichage, Aide) accessible avec Alt ou F10, des raccourcis clavier, un contour de focus visible et Échap pour revenir.</li>
+                <li><strong>Sur ces sites</strong> : un bouton Accessibilité permet de choisir une taille de texte jusqu’à 200 %, une police lisible, plus d’espace entre les lignes et les lettres, des liens soulignés, un contraste élevé, moins d’animations et un contour de focus plus visible. Vos choix restent dans votre navigateur et s’appliquent à tous les sites Evanescent Echo.</li>
             </ul>
 
             <h3>Limites connues</h3>
             <ul>
                 <li>Chaque écran n’a pas encore été testé à la main avec TalkBack, NVDA ou JAWS, ni au clavier seul. Certains écrans plus anciens peuvent encore avoir des boutons qu’un lecteur d’écran n’annonce pas comme boutons ; je les passe en revue.</li>
                 <li>Sous Windows, les lecteurs d’écran nécessitent d’activer une fois Java Access Bridge (exécutez <code>jabswitch -enable</code>). Sous Linux, les versions de bureau ne peuvent pas encore être utilisées avec un lecteur d’écran.</li>
+                <li>Les sites ont été vérifiés avec des outils automatiques (axe) en mode clair, sombre et contraste élevé, mais pas encore à la main avec un lecteur d’écran.</li>
                 <li>Certaines illustrations décoratives gardent leurs propres couleurs.</li>
             </ul>
 
@@ -300,12 +311,14 @@
                 <li><strong>Riduci movimento</strong>: le animazioni continue si fermano e le transizioni si accorciano. Il movimento che guida qualcosa, come un esercizio di respirazione, continua perché è lo scopo dell’esercizio; tutto ciò che si muove da solo si può anche mettere in pausa.</li>
                 <li><strong>Lettori di schermo</strong>: pulsanti, interruttori e immagini sono descritti, le impostazioni sono raggruppate sotto titoli, e messaggi come «salvato» o l’avanzamento di un trasferimento vengono annunciati.</li>
                 <li><strong>Sul computer</strong>: una normale barra dei menu (File, Vai, Visualizza, Aiuto) raggiungibile con Alt o F10, scorciatoie da tastiera, un contorno di focus visibile ed Esc per tornare indietro.</li>
+                <li><strong>Su questi siti</strong>: un pulsante Accessibilità ti permette di scegliere la dimensione del testo fino al 200 %, un carattere leggibile, più spazio tra righe e lettere, link sottolineati, contrasto elevato, meno movimento e un contorno del focus più visibile. Le tue scelte restano nel tuo browser e valgono per tutti i siti Evanescent Echo.</li>
             </ul>
 
             <h3>Limiti noti</h3>
             <ul>
                 <li>Non ogni schermata è ancora stata provata a mano con TalkBack, NVDA o JAWS, né solo con la tastiera. Alcune schermate più vecchie possono avere ancora pulsanti che il lettore di schermo non annuncia come pulsanti; le sto rivedendo.</li>
                 <li>Su Windows, i lettori di schermo richiedono di attivare una volta Java Access Bridge (esegui <code>jabswitch -enable</code>). Su Linux, le versioni desktop non si possono ancora usare con un lettore di schermo.</li>
+                <li>I siti sono stati verificati con strumenti automatici (axe) in modalità chiara, scura e ad alto contrasto, ma non ancora a mano con un lettore di schermo.</li>
                 <li>Alcune illustrazioni decorative mantengono i propri colori.</li>
             </ul>
 
@@ -351,12 +364,14 @@
                 <li><strong>Reduzir movimento</strong>: as animações contínuas param e as transições ficam mais curtas. O movimento que guia algo, como um exercício de respiração, continua porque é o sentido do exercício; tudo o que se move sozinho também pode ser pausado.</li>
                 <li><strong>Leitores de tela</strong>: botões, interruptores e imagens têm descrição, os ajustes ficam agrupados sob títulos, e mensagens como “salvo” ou o progresso de uma transferência são anunciadas.</li>
                 <li><strong>No computador</strong>: uma barra de menus normal (Arquivo, Ir, Exibir, Ajuda) acessível com Alt ou F10, atalhos de teclado, um contorno de foco visível e Esc para voltar.</li>
+                <li><strong>Nestes sites</strong>: um botão de Acessibilidade permite escolher o tamanho do texto até 200 %, uma fonte legível, mais espaço entre linhas e letras, links sublinhados, alto contraste, menos movimento e um contorno de foco mais visível. Suas escolhas ficam no seu navegador e valem para todos os sites da Evanescent Echo.</li>
             </ul>
 
             <h3>Limites conhecidos</h3>
             <ul>
                 <li>Nem todas as telas foram testadas à mão com TalkBack, NVDA ou JAWS, nem só com teclado. Algumas telas mais antigas ainda podem ter botões que o leitor de tela não anuncia como botões; estou revisando-as.</li>
                 <li>No Windows, os leitores de tela precisam ativar o Java Access Bridge uma vez (execute <code>jabswitch -enable</code>). No Linux, as versões de desktop ainda não podem ser usadas com leitor de tela.</li>
+                <li>Os sites foram verificados com ferramentas automáticas (axe) nos modos claro, escuro e de alto contraste, mas ainda não manualmente com um leitor de tela.</li>
                 <li>Algumas ilustrações decorativas mantêm as próprias cores.</li>
             </ul>
 
@@ -402,12 +417,14 @@
                 <li><strong>Уменьшение движения</strong>: непрерывные анимации останавливаются, переходы становятся короче. Движение, которое чем-то руководит, например дыхательное упражнение, продолжается, потому что в нём смысл упражнения; всё, что движется само по себе, тоже можно поставить на паузу.</li>
                 <li><strong>Программы чтения с экрана</strong>: у кнопок, переключателей и изображений есть описания, настройки сгруппированы под заголовками, а такие сообщения, как «сохранено» или ход переноса, озвучиваются.</li>
                 <li><strong>На компьютере</strong>: обычная строка меню (Файл, Переход, Вид, Справка), доступная по Alt или F10, сочетания клавиш, заметная рамка фокуса и Esc для возврата.</li>
+                <li><strong>На этих сайтах</strong>: кнопка «Доступность» позволяет выбрать размер текста до 200 %, удобочитаемый шрифт, больший интервал между строками и буквами, подчёркнутые ссылки, высокую контрастность, меньше движения и более заметную рамку фокуса. Ваш выбор хранится в браузере и действует на всех сайтах Evanescent Echo.</li>
             </ul>
 
             <h3>Известные ограничения</h3>
             <ul>
                 <li>Ещё не каждый экран проверен вручную с TalkBack, NVDA или JAWS или только с клавиатурой. На некоторых старых экранах ещё могут быть кнопки, которые программа чтения с экрана не называет кнопками; я их пересматриваю.</li>
                 <li>В Windows программам чтения с экрана нужно один раз включить Java Access Bridge (выполните <code>jabswitch -enable</code>). В Linux настольные версии пока нельзя использовать с программой чтения с экрана.</li>
+                <li>Сайты проверены автоматическими инструментами (axe) в светлом, тёмном и контрастном режимах, но ещё не вручную с программой чтения с экрана.</li>
                 <li>Некоторые декоративные иллюстрации сохраняют свои цвета.</li>
             </ul>
 
@@ -453,12 +470,14 @@
                 <li><strong>動きを減らす</strong>：続くアニメーションは止まり、画面の切り替えは短くなります。呼吸の練習のように何かを導く動きは、それが練習の目的なので続きます。ひとりでに動くものは一時停止もできます。</li>
                 <li><strong>スクリーンリーダー</strong>：ボタン、スイッチ、画像には説明があり、設定は見出しの下にまとめられ、「保存しました」や移行の進み具合などのメッセージが読み上げられます。</li>
                 <li><strong>パソコンでは</strong>：Alt または F10 で開ける通常のメニューバー（ファイル、移動、表示、ヘルプ）、キーボードショートカット、見やすいフォーカス枠、Esc で戻る操作。</li>
+                <li><strong>このウェブサイトでは</strong>：「アクセシビリティ」ボタンから、最大 200 % の文字サイズ、読みやすい書体、広い行間と文字間、リンクの下線、ハイコントラスト、動きの軽減、強調したフォーカス枠を選べます。設定はブラウザに保存され、Evanescent Echo のすべてのサイトに適用されます。</li>
             </ul>
 
             <h3>わかっている限界</h3>
             <ul>
                 <li>すべての画面を TalkBack、NVDA、JAWS、またはキーボードだけで手作業で確かめたわけではありません。古い画面の一部には、スクリーンリーダーがボタンとして読み上げないボタンが残っているかもしれません。順に見直しています。</li>
                 <li>Windows でスクリーンリーダーを使うには、一度だけ Java Access Bridge を有効にする必要があります（<code>jabswitch -enable</code> を実行）。Linux では、デスクトップ版はまだスクリーンリーダーで使えません。</li>
+                <li>ウェブサイトはライト・ダーク・ハイコントラストの各モードで自動ツール（axe）による確認を行いましたが、スクリーンリーダーでの手動確認はまだです。</li>
                 <li>装飾用のイラストの一部は、独自の色のままです。</li>
             </ul>
 
@@ -504,12 +523,14 @@
                 <li><strong>움직임 줄이기</strong>: 계속되는 애니메이션은 멈추고 화면 전환은 짧아집니다. 호흡 연습처럼 무언가를 안내하는 움직임은 그것이 연습의 목적이라 계속됩니다. 스스로 움직이는 것은 일시 정지할 수도 있습니다.</li>
                 <li><strong>화면 낭독기</strong>: 버튼, 스위치, 이미지에 설명이 있고, 설정은 제목 아래에 묶여 있으며, '저장됨'이나 전송 진행 상황 같은 메시지를 읽어 줍니다.</li>
                 <li><strong>컴퓨터에서</strong>: Alt 또는 F10으로 여는 일반 메뉴 막대(파일, 이동, 보기, 도움말), 키보드 단축키, 잘 보이는 포커스 테두리, 그리고 Esc로 돌아가기.</li>
+                <li><strong>이 웹사이트에서는</strong>: 접근성 버튼으로 최대 200 % 글자 크기, 읽기 쉬운 글꼴, 넓은 줄 간격과 글자 간격, 링크 밑줄, 고대비, 움직임 줄이기, 더 잘 보이는 포커스 테두리를 선택할 수 있습니다. 선택한 설정은 브라우저에 저장되며 모든 Evanescent Echo 웹사이트에 적용됩니다.</li>
             </ul>
 
             <h3>알려진 한계</h3>
             <ul>
                 <li>아직 모든 화면을 TalkBack, NVDA, JAWS나 키보드만으로 직접 시험해 보지는 못했습니다. 오래된 일부 화면에는 화면 낭독기가 버튼으로 읽지 않는 버튼이 남아 있을 수 있으며, 하나씩 점검하고 있습니다.</li>
                 <li>Windows에서 화면 낭독기를 쓰려면 Java Access Bridge를 한 번 켜야 합니다(<code>jabswitch -enable</code> 실행). Linux에서는 데스크톱 버전을 아직 화면 낭독기와 함께 쓸 수 없습니다.</li>
+                <li>웹사이트는 라이트, 다크, 고대비 모드에서 자동 도구(axe)로 점검했지만 아직 화면 낭독기로 직접 확인하지는 않았습니다.</li>
                 <li>일부 장식용 그림은 고유한 색을 유지합니다.</li>
             </ul>
 
@@ -555,12 +576,14 @@
                 <li><strong>减少动态效果</strong>：持续的动画会停止，过渡会变短。引导性的动作（例如呼吸练习）会继续，因为那正是练习的意义；任何自行运动的内容也都可以暂停。</li>
                 <li><strong>屏幕阅读器</strong>：按钮、开关和图片都有描述，设置按标题分组，“已保存”或转移进度等消息会被朗读出来。</li>
                 <li><strong>在电脑上</strong>：可用 Alt 或 F10 打开的标准菜单栏（文件、转到、视图、帮助）、键盘快捷键、清晰可见的焦点边框，以及按 Esc 返回。</li>
+                <li><strong>在这些网站上</strong>：通过“无障碍”按钮可以选择最大 200 % 的文字大小、易读字体、更大的行距和字距、链接下划线、高对比度、减少动态效果以及更明显的焦点轮廓。你的选择保存在浏览器中，并适用于所有 Evanescent Echo 网站。</li>
             </ul>
 
             <h3>已知局限</h3>
             <ul>
                 <li>并非每个界面都已用 TalkBack、NVDA、JAWS 或仅用键盘亲手测试过。一些较早的界面可能仍有屏幕阅读器不会读作“按钮”的按钮，我正在逐一检查。</li>
                 <li>在 Windows 上，屏幕阅读器需要先启用一次 Java Access Bridge（运行 <code>jabswitch -enable</code>）。在 Linux 上，桌面版目前还无法配合屏幕阅读器使用。</li>
+                <li>这些网站已在浅色、深色和高对比度模式下用自动工具（axe）检查过，但尚未用读屏软件进行人工测试。</li>
                 <li>部分装饰性插图保留其原有颜色。</li>
             </ul>
 

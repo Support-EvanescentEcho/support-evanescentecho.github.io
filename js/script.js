@@ -419,6 +419,7 @@ const translations = {
 
 function setLanguage(lang) {
     localStorage.setItem('portal-lang', lang);
+    document.documentElement.lang = lang;
     const dict = translations[lang] || translations.en;
     document.body.className = 'lang-' + lang;
 

@@ -3,11 +3,11 @@
     --light-bg: #F9F7F3;
     --light-surface: #FFFFFF;
     --light-surface-variant: #F2ECE3;
-    --light-primary: #946835;
-    --light-secondary: #5F7F68;
-    --light-accent: #C77A93;
+    --light-primary: #8B6132;
+    --light-secondary: #54705C;
+    --light-accent: #AC4869;
     --light-text: #1C1917;
-    --light-text-muted: #78716C;
+    --light-text-muted: #6F6864;
     --light-border: rgba(148, 104, 53, 0.18);
     --light-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
@@ -81,6 +81,7 @@ header {
 
 .brand {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.85rem;
     text-decoration: none;
@@ -116,6 +117,7 @@ header {
 
 .controls {
     display: flex;
+    flex-wrap: wrap; /* large text (WCAG 1.4.4) must not clip the controls */
     gap: 1rem;
     align-items: center;
 }
@@ -226,7 +228,7 @@ main {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
     gap: 2rem;
     margin-top: 1.5rem;
 }
@@ -327,7 +329,7 @@ main {
 
 .btn-primary {
     background: var(--primary);
-    color: #FFF;
+    color: var(--surface);
     border: 1px solid transparent;
 }
 
@@ -367,7 +369,7 @@ main {
 /* Pillars / Philosophy */
 .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
@@ -436,7 +438,7 @@ footer {
 
 footer a {
     color: var(--primary);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .footer-links {
