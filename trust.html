@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <style>
-        /* Una sola página con un artículo por idioma; sin traducción, se muestra el inglés */
+        /* Una sola página con un artículo por idioma */
         .trust { display: none; max-width: 760px; margin: 0 auto; line-height: 1.7; }
-        body:not(.lang-es) .trust[lang="en"], body.lang-es .trust[lang="es"] { display: block; }
+        body.lang-en .trust[lang="en"], body.lang-es .trust[lang="es"], body.lang-de .trust[lang="de"], body.lang-fr .trust[lang="fr"], body.lang-it .trust[lang="it"], body.lang-pt .trust[lang="pt"], body.lang-ru .trust[lang="ru"], body.lang-ja .trust[lang="ja"], body.lang-ko .trust[lang="ko"], body.lang-zh .trust[lang="zh"] { display: block; }
         .trust h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 500; margin-bottom: 0.5rem; }
         .trust h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; color: var(--primary); margin: 2.5rem 0 0.75rem; }
         .trust h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
@@ -26,8 +26,6 @@
         .trust .notice strong { color: var(--primary); }
         .trust a { color: var(--primary); }
         .trust .back { display: inline-block; margin-bottom: 2rem; }
-        .translation-note { display: none; max-width: 760px; margin: 0 auto 1rem; color: var(--text-muted); font-size: 0.9rem; }
-        body:not(.lang-en):not(.lang-es) .translation-note { display: block; }
     </style>
 </head>
 <body class="lang-en">
@@ -61,8 +59,6 @@
     </header>
 
     <main>
-        <p class="translation-note">This page is only available in English and Spanish for now.</p>
-
         <!-- ===================== ENGLISH ===================== -->
         <article class="trust" lang="en">
             <a href="index.html" class="back">← Evanescent Echo</a>
@@ -163,6 +159,414 @@
             <h2>Escríbeme</h2>
             <p>Si algo te lo pone difícil —una pantalla que no puedes leer, un botón al que no llegas, algo de esta página que no es cierto—, escríbeme a <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leo cada mensaje personalmente.</p>
             <p class="lead">Última actualización: noviembre de 2026.</p>
+        </article>
+
+        <!-- ===================== DEUTSCH ===================== -->
+        <article class="trust" lang="de">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Deine Daten und dein Zugang</h1>
+            <p class="lead">Alle Apps von Evanescent Echo stehen auf zwei gemeinsamen Grundlagen: Die eine hält, was du schreibst, aufnimmst und fotografierst, geschützt auf deinem Gerät, die andere lässt jede App sich daran anpassen, wie du liest, siehst und dich bewegst. Diese Seite erklärt in einfachen Worten, was sie für dich tun und wo ihre Grenzen liegen.</p>
+
+            <div class="notice">
+                <p><strong>Ein ehrlicher Hinweis.</strong> Ich gestalte die Apps so, dass sie anerkannten guten Praktiken für Sicherheit und digitale Barrierefreiheit folgen (den Web Content Accessibility Guidelines, WCAG 2.2, Stufe AA). Das ist das Ziel, keine Zertifizierung: Keine Behörde, keine Zertifizierungsstelle und kein unabhängiger Prüfer hat diese Apps oder diese Seite geprüft oder freigegeben. Diese Seite beschreibt, was die Apps tun; sie behauptet nicht, dass sie ein Gesetz oder eine Norm erfüllen.</p>
+            </div>
+
+            <h2>Deine Daten</h2>
+
+            <h3>Sie bleiben auf deinem Gerät</h3>
+            <p>Es gibt keine Konten, keine Server und keine Cloud. Die Apps zeigen keine Werbung und senden keine Statistiken oder Telemetrie. Was du aufbewahrst, liegt auf deinem Handy oder Computer, und nur du entscheidest, ob es irgendwo anders hingeht.</p>
+
+            <h3>Sie werden verschlüsselt gespeichert</h3>
+            <p>Einträge, Aufnahmen und Fotos werden auf dem Gerät mit libsodium verschlüsselt, einer weit verbreiteten und öffentlich geprüften Kryptografie-Bibliothek. Den Schlüssel dazu schützt dein System: der sichere Schlüsselspeicher unter Android, der geschützte Benutzerspeicher unter Windows und unter Linux, wo es nichts Vergleichbares gibt, ein Passwort, das du selbst wählst.</p>
+
+            <h3>Sicherungen, die nur du öffnen kannst</h3>
+            <p>Eine Sicherungsdatei kann mit einem Passwort versiegelt werden. Das Passwort wird mit Argon2id in einen Schlüssel umgewandelt, was das Erraten verlangsamt, und der Inhalt wird mit XChaCha20-Poly1305 verschlüsselt, das außerdem erkennt, ob die Datei verändert wurde. Ohne das Passwort kann niemand die Sicherung lesen, nicht einmal ich. Ein vergessenes Passwort lässt sich deshalb auch nicht wiederherstellen.</p>
+
+            <h3>Auf ein anderes Gerät, ohne Internet</h3>
+            <p>Um deine Daten vom Handy auf den Computer zu bringen (oder umgekehrt), müssen beide Geräte im selben lokalen Netz sein. Sie verbinden sich mit einem kurzen Code, der auf einem Bildschirm erscheint und auf dem anderen eingegeben wird; der Code wird nie über das Netz gesendet, und ein falscher Code verrät nichts über ihn. Nach wenigen Fehlversuchen oder nach zehn Minuten wird der Code ungültig. Nichts geht über das Internet oder über einen Server.</p>
+
+            <h3>Berechtigungen</h3>
+            <p>Jede App fragt nur nach dem, was sie benutzt. Die Netzwerkberechtigung dient nur dieser Übertragung zwischen deinen eigenen Geräten. Eine App, die sie nicht braucht, wie Sill, fragt nach gar keiner Berechtigung.</p>
+
+            <h2>Dein Zugang</h2>
+            <p>Jede Einstellung dieser Liste wird wirklich in der ganzen App angewendet. Wenn eine Einstellung nicht tun kann, was sie verspricht, wird sie nicht angeboten.</p>
+            <ul>
+                <li><strong>Text bis 200 %</strong>, zusätzlich zur Größe, die du in deinem System gewählt hast.</li>
+                <li><strong>Fetter Text</strong> und <strong>leichteres Lesen</strong>: schlichte Buchstaben mit mehr Abstand zwischen Buchstaben und Zeilen, was bei Legasthenie helfen kann.</li>
+                <li><strong>Kontrast</strong>: Die Farben jedes Designs werden so angepasst, dass Text vor seinem Hintergrund lesbar bleibt, und <strong>hoher Kontrast</strong> verstärkt diesen Unterschied noch.</li>
+                <li><strong>Farbsehen</strong>: Für Menschen, die Rot, Grün oder Blau schwächer wahrnehmen, verschiebt die App die Farben, sodass die Unterschiede, die sie übersehen würden, in anderen sichtbar werden. Sie korrigiert die Farben; sie ahmt keine Farbenblindheit nach.</li>
+                <li><strong>Bewegung reduzieren</strong>: Dauerhafte Animationen halten an und Übergänge werden kürzer. Bewegung, die etwas anleitet, etwa eine Atemübung, läuft weiter, weil sie der Sinn der Übung ist; alles, was sich von selbst bewegt, lässt sich auch anhalten.</li>
+                <li><strong>Screenreader</strong>: Schaltflächen, Schalter und Bilder sind beschrieben, Einstellungen sind unter Überschriften gruppiert, und Meldungen wie „gespeichert“ oder der Fortschritt einer Übertragung werden angesagt.</li>
+                <li><strong>Am Computer</strong>: eine normale Menüleiste (Datei, Gehe zu, Ansicht, Hilfe), erreichbar mit Alt oder F10, Tastenkürzel, ein sichtbarer Fokusrahmen und Esc zum Zurückgehen.</li>
+            </ul>
+
+            <h3>Bekannte Grenzen</h3>
+            <ul>
+                <li>Noch nicht jeder Bildschirm wurde von Hand mit TalkBack, NVDA oder JAWS oder nur mit der Tastatur getestet. Einige ältere Bildschirme haben vielleicht noch Schaltflächen, die ein Screenreader nicht als Schaltflächen ansagt; ich gehe sie gerade durch.</li>
+                <li>Unter Windows brauchen Screenreader einmalig die Java Access Bridge (führe <code>jabswitch -enable</code> aus). Unter Linux lassen sich die Desktop-Versionen noch nicht mit einem Screenreader nutzen.</li>
+                <li>Einige dekorative Illustrationen behalten ihre eigenen Farben.</li>
+            </ul>
+
+            <h2>Schreib mir</h2>
+            <p>Wenn dir etwas im Weg steht – ein Bildschirm, den du nicht lesen kannst, eine Schaltfläche, die du nicht erreichst, eine Aussage auf dieser Seite, die nicht stimmt –, schreib mir an <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Ich lese jede Nachricht selbst.</p>
+            <p class="lead">Zuletzt aktualisiert: November 2026.</p>
+        </article>
+
+        <!-- ===================== FRANÇAIS ===================== -->
+        <article class="trust" lang="fr">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Vos données et votre accès</h1>
+            <p class="lead">Toutes les applications d’Evanescent Echo reposent sur deux bases communes : l’une garde ce que vous écrivez, enregistrez et photographiez sur votre appareil et protégé, l’autre permet à chaque application de s’adapter à votre façon de lire, de voir et de bouger. Cette page explique simplement ce qu’elles font pour vous et où sont leurs limites.</p>
+
+            <div class="notice">
+                <p><strong>Une note honnête.</strong> Je conçois les applications pour suivre des bonnes pratiques reconnues en sécurité et en accessibilité numérique (les Règles pour l’accessibilité des contenus Web, WCAG 2.2, niveau AA). C’est l’objectif, pas une certification : aucun régulateur, organisme de certification ni auditeur indépendant n’a examiné ni approuvé ces applications ou cette page. Cette page décrit ce que font les applications ; elle n’affirme pas qu’elles respectent une loi ou une norme.</p>
+            </div>
+
+            <h2>Vos données</h2>
+
+            <h3>Elles restent sur votre appareil</h3>
+            <p>Il n’y a ni compte, ni serveur, ni cloud. Les applications n’affichent pas de publicité et n’envoient ni statistiques ni télémétrie. Ce que vous gardez vit sur votre téléphone ou votre ordinateur, et vous seul décidez s’il va ailleurs.</p>
+
+            <h3>Elles sont chiffrées là où elles sont stockées</h3>
+            <p>Les textes, enregistrements et photos sont chiffrés sur l’appareil avec libsodium, une bibliothèque de cryptographie très utilisée et examinée publiquement. La clé qui les ouvre est protégée par votre système : le stockage sécurisé des clés sur Android, le stockage protégé de l’utilisateur sur Windows et, sur Linux, où il n’existe rien d’équivalent, un mot de passe que vous choisissez.</p>
+
+            <h3>Des sauvegardes que vous seul pouvez ouvrir</h3>
+            <p>Un fichier de sauvegarde peut être scellé par un mot de passe. Le mot de passe est transformé en clé avec Argon2id, ce qui rend sa recherche lente, et le contenu est chiffré avec XChaCha20-Poly1305, qui détecte aussi si le fichier a été modifié. Sans le mot de passe, personne ne peut lire la sauvegarde, pas même moi. Cela signifie aussi qu’un mot de passe oublié ne peut pas être récupéré.</p>
+
+            <h3>Passer à un autre appareil, sans Internet</h3>
+            <p>Pour faire passer vos données du téléphone à l’ordinateur (ou l’inverse), les deux appareils doivent être sur le même réseau local. Ils s’associent avec un code court affiché sur un écran et saisi sur l’autre ; le code n’est jamais envoyé sur le réseau, et un code erroné ne permet rien apprendre de lui. Après quelques essais manqués, ou au bout de dix minutes, le code n’est plus valable. Rien ne passe par Internet ni par un serveur.</p>
+
+            <h3>Autorisations</h3>
+            <p>Chaque application ne demande que ce qu’elle utilise. L’autorisation réseau sert uniquement à ce transfert local entre vos propres appareils. Une application qui n’en a pas besoin, comme Sill, ne demande aucune autorisation.</p>
+
+            <h2>Votre accès</h2>
+            <p>Chaque réglage de cette liste s’applique vraiment dans toute l’application. Si un réglage ne peut pas faire ce qu’il annonce, il n’est pas proposé.</p>
+            <ul>
+                <li><strong>Texte jusqu’à 200 %</strong>, en plus de la taille choisie dans votre système.</li>
+                <li><strong>Texte en gras</strong> et <strong>lecture plus facile</strong> : des lettres simples avec plus d’espace entre les lettres et les lignes, ce qui peut aider en cas de dyslexie.</li>
+                <li><strong>Contraste</strong> : les couleurs de chaque thème sont ajustées pour que le texte reste lisible sur son fond, et le <strong>contraste élevé</strong> renforce encore cette différence.</li>
+                <li><strong>Vision des couleurs</strong> : pour les personnes qui perçoivent moins le rouge, le vert ou le bleu, l’application décale les couleurs pour que les différences qu’elles ne verraient pas apparaissent dans d’autres. Elle corrige les couleurs ; elle n’imite pas le daltonisme.</li>
+                <li><strong>Réduire les animations</strong> : les animations continues s’arrêtent et les transitions sont plus courtes. Un mouvement qui guide quelque chose, comme un exercice de respiration, continue parce qu’il est le but de l’exercice ; tout ce qui bouge tout seul peut aussi être mis en pause.</li>
+                <li><strong>Lecteurs d’écran</strong> : les boutons, interrupteurs et images sont décrits, les réglages sont regroupés sous des titres, et des messages comme « enregistré » ou la progression d’un transfert sont annoncés.</li>
+                <li><strong>Sur l’ordinateur</strong> : une barre de menus classique (Fichier, Aller, Affichage, Aide) accessible avec Alt ou F10, des raccourcis clavier, un contour de focus visible et Échap pour revenir.</li>
+            </ul>
+
+            <h3>Limites connues</h3>
+            <ul>
+                <li>Chaque écran n’a pas encore été testé à la main avec TalkBack, NVDA ou JAWS, ni au clavier seul. Certains écrans plus anciens peuvent encore avoir des boutons qu’un lecteur d’écran n’annonce pas comme boutons ; je les passe en revue.</li>
+                <li>Sous Windows, les lecteurs d’écran nécessitent d’activer une fois Java Access Bridge (exécutez <code>jabswitch -enable</code>). Sous Linux, les versions de bureau ne peuvent pas encore être utilisées avec un lecteur d’écran.</li>
+                <li>Certaines illustrations décoratives gardent leurs propres couleurs.</li>
+            </ul>
+
+            <h2>Écrivez-moi</h2>
+            <p>Si quelque chose vous gêne — un écran que vous ne pouvez pas lire, un bouton que vous n’atteignez pas, une affirmation fausse sur cette page —, écrivez-moi à <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Je lis chaque message moi-même.</p>
+            <p class="lead">Dernière mise à jour : novembre 2026.</p>
+        </article>
+
+        <!-- ===================== ITALIANO ===================== -->
+        <article class="trust" lang="it">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>I tuoi dati e il tuo accesso</h1>
+            <p class="lead">Tutte le app di Evanescent Echo poggiano su due basi comuni: una tiene ciò che scrivi, registri e fotografi sul tuo dispositivo e protetto, l’altra permette a ogni app di adattarsi a come leggi, vedi e ti muovi. Questa pagina spiega con parole semplici cosa fanno per te e dove sono i loro limiti.</p>
+
+            <div class="notice">
+                <p><strong>Una nota onesta.</strong> Progetto le app per seguire buone pratiche riconosciute di sicurezza e di accessibilità digitale (le Linee guida per l’accessibilità dei contenuti Web, WCAG 2.2, livello AA). È l’obiettivo, non una certificazione: nessun regolatore, ente di certificazione o revisore indipendente ha esaminato o approvato queste app o questa pagina. Questa pagina descrive ciò che fanno le app; non afferma che rispettino alcuna legge o norma.</p>
+            </div>
+
+            <h2>I tuoi dati</h2>
+
+            <h3>Restano sul tuo dispositivo</h3>
+            <p>Non ci sono account, né server, né cloud. Le app non hanno pubblicità e non inviano statistiche né telemetria. Ciò che conservi vive sul tuo telefono o computer, e solo tu decidi se va da qualche altra parte.</p>
+
+            <h3>Sono cifrati dove vengono salvati</h3>
+            <p>Testi, registrazioni e foto vengono cifrati sul dispositivo con libsodium, una libreria di crittografia molto usata e revisionata pubblicamente. La chiave che li apre è protetta dal tuo sistema: l’archivio sicuro delle chiavi su Android, l’archivio protetto dell’utente su Windows e, su Linux, dove non esiste nulla di equivalente, una password scelta da te.</p>
+
+            <h3>Backup che solo tu puoi aprire</h3>
+            <p>Un file di backup può essere sigillato con una password. La password viene trasformata in chiave con Argon2id, che rende lento indovinarla, e il contenuto viene cifrato con XChaCha20-Poly1305, che rileva anche se il file è stato alterato. Senza la password nessuno può leggere il backup, nemmeno io. Questo significa anche che una password dimenticata non si può recuperare.</p>
+
+            <h3>Passare a un altro dispositivo, senza internet</h3>
+            <p>Per portare i tuoi dati dal telefono al computer (o viceversa), entrambi i dispositivi devono essere sulla stessa rete locale. Si abbinano con un codice breve mostrato su uno schermo e digitato sull’altro; il codice non viene mai inviato in rete, e un codice sbagliato non basta a scoprire nulla su di esso. Dopo pochi tentativi falliti, o dopo dieci minuti, il codice non vale più. Niente passa per internet o per un server.</p>
+
+            <h3>Permessi</h3>
+            <p>Ogni app chiede solo ciò che usa. Il permesso di rete serve solo per quel trasferimento locale tra i tuoi dispositivi. Un’app che non ne ha bisogno, come Sill, non chiede alcun permesso.</p>
+
+            <h2>Il tuo accesso</h2>
+            <p>Ogni impostazione di questo elenco si applica davvero in tutta l’app. Se un’impostazione non può fare ciò che dice, non viene offerta.</p>
+            <ul>
+                <li><strong>Testo fino al 200 %</strong>, oltre alla dimensione scelta nel tuo sistema.</li>
+                <li><strong>Testo in grassetto</strong> e <strong>lettura più facile</strong>: lettere semplici con più spazio tra lettere e righe, che può aiutare con la dislessia.</li>
+                <li><strong>Contrasto</strong>: i colori di ogni tema vengono regolati perché il testo resti leggibile sul suo sfondo, e l’<strong>alto contrasto</strong> rende questa differenza ancora più forte.</li>
+                <li><strong>Visione dei colori</strong>: per chi percepisce meno il rosso, il verde o il blu, l’app sposta i colori in modo che le differenze che non vedrebbe compaiano in altri. Corregge i colori; non imita il daltonismo.</li>
+                <li><strong>Riduci movimento</strong>: le animazioni continue si fermano e le transizioni si accorciano. Il movimento che guida qualcosa, come un esercizio di respirazione, continua perché è lo scopo dell’esercizio; tutto ciò che si muove da solo si può anche mettere in pausa.</li>
+                <li><strong>Lettori di schermo</strong>: pulsanti, interruttori e immagini sono descritti, le impostazioni sono raggruppate sotto titoli, e messaggi come «salvato» o l’avanzamento di un trasferimento vengono annunciati.</li>
+                <li><strong>Sul computer</strong>: una normale barra dei menu (File, Vai, Visualizza, Aiuto) raggiungibile con Alt o F10, scorciatoie da tastiera, un contorno di focus visibile ed Esc per tornare indietro.</li>
+            </ul>
+
+            <h3>Limiti noti</h3>
+            <ul>
+                <li>Non ogni schermata è ancora stata provata a mano con TalkBack, NVDA o JAWS, né solo con la tastiera. Alcune schermate più vecchie possono avere ancora pulsanti che il lettore di schermo non annuncia come pulsanti; le sto rivedendo.</li>
+                <li>Su Windows, i lettori di schermo richiedono di attivare una volta Java Access Bridge (esegui <code>jabswitch -enable</code>). Su Linux, le versioni desktop non si possono ancora usare con un lettore di schermo.</li>
+                <li>Alcune illustrazioni decorative mantengono i propri colori.</li>
+            </ul>
+
+            <h2>Scrivimi</h2>
+            <p>Se qualcosa ti ostacola — una schermata che non riesci a leggere, un pulsante che non raggiungi, un’affermazione sbagliata in questa pagina — scrivimi a <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leggo personalmente ogni messaggio.</p>
+            <p class="lead">Ultimo aggiornamento: novembre 2026.</p>
+        </article>
+
+        <!-- ===================== PORTUGUÊS ===================== -->
+        <article class="trust" lang="pt">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Seus dados e seu acesso</h1>
+            <p class="lead">Todos os apps da Evanescent Echo se apoiam em duas bases comuns: uma mantém o que você escreve, grava e fotografa no seu dispositivo e protegido, e outra permite que cada app se adapte à forma como você lê, vê e se move. Esta página explica, em palavras simples, o que elas fazem por você e onde estão seus limites.</p>
+
+            <div class="notice">
+                <p><strong>Uma nota honesta.</strong> Eu projeto os apps para seguir boas práticas reconhecidas de segurança e de acessibilidade digital (as Diretrizes de Acessibilidade para Conteúdo Web, WCAG 2.2, nível AA). Esse é o objetivo, não uma certificação: nenhum regulador, organismo de certificação ou auditor independente revisou ou aprovou estes apps ou esta página. Esta página descreve o que os apps fazem; não afirma que eles cumpram qualquer lei ou norma.</p>
+            </div>
+
+            <h2>Seus dados</h2>
+
+            <h3>Ficam no seu dispositivo</h3>
+            <p>Não há contas, nem servidores, nem nuvem. Os apps não têm anúncios e não enviam estatísticas nem telemetria. O que você guarda vive no seu celular ou computador, e só você decide se vai para algum outro lugar.</p>
+
+            <h3>São guardados criptografados</h3>
+            <p>Textos, gravações e fotos são criptografados no próprio dispositivo com a libsodium, uma biblioteca de criptografia muito usada e revisada publicamente. A chave que os abre é protegida pelo seu sistema: o armazenamento seguro de chaves no Android, o armazenamento protegido do usuário no Windows e, no Linux, onde não há nada equivalente, uma senha escolhida por você.</p>
+
+            <h3>Backups que só você pode abrir</h3>
+            <p>Um arquivo de backup pode ser selado com senha. A senha é transformada em chave com Argon2id, que torna lento adivinhá-la, e o conteúdo é criptografado com XChaCha20-Poly1305, que também detecta se o arquivo foi alterado. Sem a senha ninguém consegue ler o backup, nem mesmo eu. Isso também significa que uma senha esquecida não pode ser recuperada.</p>
+
+            <h3>Passar para outro dispositivo, sem internet</h3>
+            <p>Para levar seus dados do celular para o computador (ou o contrário), os dois precisam estar na mesma rede local. Eles se pareiam com um código curto que aparece numa tela e é digitado na outra; o código nunca viaja pela rede, e um código errado não serve para descobrir nada sobre ele. Após algumas tentativas erradas, ou depois de dez minutos, o código deixa de valer. Nada passa pela internet nem por nenhum servidor.</p>
+
+            <h3>Permissões</h3>
+            <p>Cada app pede só o que usa. A permissão de rede existe apenas para essa transferência local entre os seus próprios dispositivos. Um app que não precisa dela, como o Sill, não pede nenhuma permissão.</p>
+
+            <h2>Seu acesso</h2>
+            <p>Cada ajuste desta lista é aplicado de verdade em todo o app. Se um ajuste não pode fazer o que diz, ele não é oferecido.</p>
+            <ul>
+                <li><strong>Texto até 200 %</strong>, sobre o tamanho que você escolheu no seu sistema.</li>
+                <li><strong>Texto em negrito</strong> e <strong>leitura mais fácil</strong>: letras simples com mais espaço entre letras e linhas, o que pode ajudar com a dislexia.</li>
+                <li><strong>Contraste</strong>: as cores de cada tema são ajustadas para que o texto continue legível sobre o fundo, e o <strong>alto contraste</strong> aumenta ainda mais essa diferença.</li>
+                <li><strong>Visão de cores</strong>: para quem percebe menos o vermelho, o verde ou o azul, o app desloca as cores para que as diferenças que não veria apareçam em outras. Ele corrige as cores; não imita o daltonismo.</li>
+                <li><strong>Reduzir movimento</strong>: as animações contínuas param e as transições ficam mais curtas. O movimento que guia algo, como um exercício de respiração, continua porque é o sentido do exercício; tudo o que se move sozinho também pode ser pausado.</li>
+                <li><strong>Leitores de tela</strong>: botões, interruptores e imagens têm descrição, os ajustes ficam agrupados sob títulos, e mensagens como “salvo” ou o progresso de uma transferência são anunciadas.</li>
+                <li><strong>No computador</strong>: uma barra de menus normal (Arquivo, Ir, Exibir, Ajuda) acessível com Alt ou F10, atalhos de teclado, um contorno de foco visível e Esc para voltar.</li>
+            </ul>
+
+            <h3>Limites conhecidos</h3>
+            <ul>
+                <li>Nem todas as telas foram testadas à mão com TalkBack, NVDA ou JAWS, nem só com teclado. Algumas telas mais antigas ainda podem ter botões que o leitor de tela não anuncia como botões; estou revisando-as.</li>
+                <li>No Windows, os leitores de tela precisam ativar o Java Access Bridge uma vez (execute <code>jabswitch -enable</code>). No Linux, as versões de desktop ainda não podem ser usadas com leitor de tela.</li>
+                <li>Algumas ilustrações decorativas mantêm as próprias cores.</li>
+            </ul>
+
+            <h2>Escreva para mim</h2>
+            <p>Se algo atrapalhar você — uma tela que não consegue ler, um botão que não alcança, algo nesta página que não é verdade —, escreva para <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leio cada mensagem pessoalmente.</p>
+            <p class="lead">Última atualização: novembro de 2026.</p>
+        </article>
+
+        <!-- ===================== РУССКИЙ ===================== -->
+        <article class="trust" lang="ru">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Ваши данные и доступность</h1>
+            <p class="lead">Все приложения Evanescent Echo опираются на две общие основы: одна хранит то, что вы пишете, записываете и фотографируете, на вашем устройстве и под защитой, другая позволяет каждому приложению подстроиться под то, как вы читаете, видите и двигаетесь. Эта страница простыми словами объясняет, что они делают для вас и где их пределы.</p>
+
+            <div class="notice">
+                <p><strong>Честное примечание.</strong> Я создаю приложения так, чтобы они следовали признанным хорошим практикам безопасности и цифровой доступности (Руководству по доступности веб-контента, WCAG 2.2, уровень AA). Это цель, а не сертификация: ни один регулятор, орган сертификации или независимый аудитор не проверял и не одобрял эти приложения или эту страницу. Эта страница описывает, что делают приложения; она не утверждает, что они соответствуют какому-либо закону или стандарту.</p>
+            </div>
+
+            <h2>Ваши данные</h2>
+
+            <h3>Они остаются на вашем устройстве</h3>
+            <p>Здесь нет учётных записей, серверов и облака. В приложениях нет рекламы, и они не отправляют статистику или телеметрию. То, что вы храните, живёт на вашем телефоне или компьютере, и только вы решаете, попадёт ли оно куда-то ещё.</p>
+
+            <h3>Они хранятся в зашифрованном виде</h3>
+            <p>Записи, аудио и фотографии шифруются на самом устройстве с помощью libsodium — широко используемой и открыто проверенной криптографической библиотеки. Ключ к ним защищает ваша система: защищённое хранилище ключей в Android, защищённое хранилище пользователя в Windows, а в Linux, где ничего подобного нет, — пароль, который вы выбираете сами.</p>
+
+            <h3>Резервные копии, которые можете открыть только вы</h3>
+            <p>Файл резервной копии можно запечатать паролем. Пароль превращается в ключ с помощью Argon2id, что делает его подбор медленным, а содержимое шифруется XChaCha20-Poly1305, который также обнаруживает, был ли файл изменён. Без пароля никто не сможет прочитать копию, даже я. Это также значит, что забытый пароль восстановить нельзя.</p>
+
+            <h3>Перенос на другое устройство без интернета</h3>
+            <p>Чтобы перенести данные с телефона на компьютер (или обратно), оба устройства должны быть в одной локальной сети. Они соединяются с помощью короткого кода: он показывается на одном экране и вводится на другом. Код никогда не передаётся по сети, а неверный код не позволяет ничего о нём узнать. После нескольких неудачных попыток или через десять минут код перестаёт действовать. Ничего не проходит через интернет или какой-либо сервер.</p>
+
+            <h3>Разрешения</h3>
+            <p>Каждое приложение запрашивает только то, что использует. Разрешение на доступ к сети нужно только для этого локального переноса между вашими собственными устройствами. Приложение, которому оно не нужно, например Sill, не запрашивает никаких разрешений.</p>
+
+            <h2>Доступность</h2>
+            <p>Каждая настройка из этого списка действительно применяется во всём приложении. Если настройка не может сделать то, что обещает, её нет.</p>
+            <ul>
+                <li><strong>Текст до 200 %</strong> — поверх размера, выбранного в вашей системе.</li>
+                <li><strong>Жирный текст</strong> и <strong>облегчённое чтение</strong>: простые буквы с увеличенными интервалами между буквами и строками, что может помочь при дислексии.</li>
+                <li><strong>Контраст</strong>: цвета каждой темы подстраиваются так, чтобы текст оставался читаемым на своём фоне, а <strong>высокий контраст</strong> делает эту разницу ещё сильнее.</li>
+                <li><strong>Цветовое зрение</strong>: для тех, кто хуже различает красный, зелёный или синий, приложение смещает цвета, чтобы незаметные различия проявились в других. Оно исправляет цвета, а не имитирует цветовую слепоту.</li>
+                <li><strong>Уменьшение движения</strong>: непрерывные анимации останавливаются, переходы становятся короче. Движение, которое чем-то руководит, например дыхательное упражнение, продолжается, потому что в нём смысл упражнения; всё, что движется само по себе, тоже можно поставить на паузу.</li>
+                <li><strong>Программы чтения с экрана</strong>: у кнопок, переключателей и изображений есть описания, настройки сгруппированы под заголовками, а такие сообщения, как «сохранено» или ход переноса, озвучиваются.</li>
+                <li><strong>На компьютере</strong>: обычная строка меню (Файл, Переход, Вид, Справка), доступная по Alt или F10, сочетания клавиш, заметная рамка фокуса и Esc для возврата.</li>
+            </ul>
+
+            <h3>Известные ограничения</h3>
+            <ul>
+                <li>Ещё не каждый экран проверен вручную с TalkBack, NVDA или JAWS или только с клавиатурой. На некоторых старых экранах ещё могут быть кнопки, которые программа чтения с экрана не называет кнопками; я их пересматриваю.</li>
+                <li>В Windows программам чтения с экрана нужно один раз включить Java Access Bridge (выполните <code>jabswitch -enable</code>). В Linux настольные версии пока нельзя использовать с программой чтения с экрана.</li>
+                <li>Некоторые декоративные иллюстрации сохраняют свои цвета.</li>
+            </ul>
+
+            <h2>Напишите мне</h2>
+            <p>Если что-то мешает — экран, который не удаётся прочитать, кнопка, до которой не добраться, неверное утверждение на этой странице, — напишите мне на <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Я лично читаю каждое сообщение.</p>
+            <p class="lead">Последнее обновление: ноябрь 2026 г.</p>
+        </article>
+
+        <!-- ===================== 日本語 ===================== -->
+        <article class="trust" lang="ja">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>あなたのデータとアクセシビリティ</h1>
+            <p class="lead">Evanescent Echo のアプリはすべて、二つの共通の土台の上に作られています。ひとつは、あなたが書いたもの、録音したもの、撮影したものを端末の中で守るためのもの。もうひとつは、読み方、見え方、動き方に合わせて各アプリを調整するためのものです。このページでは、それらが何をしてくれるのか、そしてどこに限界があるのかを、わかりやすい言葉で説明します。</p>
+
+            <div class="notice">
+                <p><strong>正直なお知らせ。</strong> 私は、セキュリティとデジタル・アクセシビリティについて広く認められた良い慣行（Web コンテンツ・アクセシビリティ・ガイドライン WCAG 2.2、レベル AA）に沿うようにアプリを設計しています。これは目標であり、認証ではありません。規制当局、認証機関、独立した監査人のいずれも、これらのアプリやこのページを審査・承認していません。このページはアプリが何をするかを説明するものであり、いかなる法律や規格に適合していると主張するものではありません。</p>
+            </div>
+
+            <h2>あなたのデータ</h2>
+
+            <h3>データは端末の中にとどまります</h3>
+            <p>アカウントも、サーバーも、クラウドもありません。アプリには広告がなく、統計情報やテレメトリーも送信しません。保存したものはあなたのスマートフォンやパソコンの中にあり、ほかの場所に送るかどうかを決めるのはあなただけです。</p>
+
+            <h3>保存時に暗号化されます</h3>
+            <p>記録、録音、写真は、広く使われ公開で検証されている暗号ライブラリ libsodium によって端末上で暗号化されます。それを開く鍵はシステムが守ります。Android では安全な鍵ストア、Windows ではユーザーの保護されたストレージ、同等の仕組みがない Linux ではあなたが選ぶパスワードです。</p>
+
+            <h3>あなたにしか開けないバックアップ</h3>
+            <p>バックアップファイルはパスワードで封印できます。パスワードは Argon2id で鍵に変換されるため推測に時間がかかり、内容は XChaCha20-Poly1305 で暗号化されるため、ファイルが改ざんされたことも検出できます。パスワードがなければ、私も含めて誰もバックアップを読めません。つまり、忘れたパスワードは復元できません。</p>
+
+            <h3>インターネットを使わずに別の端末へ</h3>
+            <p>スマートフォンからパソコンへ（またはその逆へ）データを移すには、両方の端末が同じローカルネットワークにある必要があります。片方の画面に表示される短いコードをもう片方に入力してペアリングします。コードがネットワークを通じて送られることはなく、間違ったコードからコードについて何かを知ることもできません。数回失敗するか 10 分が過ぎると、コードは使えなくなります。インターネットやサーバーを経由するものは何もありません。</p>
+
+            <h3>権限</h3>
+            <p>各アプリは使うものだけを求めます。ネットワークの権限は、あなた自身の端末どうしのローカルな移行のためだけにあります。Sill のように必要のないアプリは、権限を一切求めません。</p>
+
+            <h2>アクセシビリティ</h2>
+            <p>この一覧の設定は、どれもアプリ全体に実際に適用されます。書かれているとおりに働かない設定は、そもそも提供しません。</p>
+            <ul>
+                <li><strong>文字サイズは最大 200 %</strong>。システムで選んだサイズに上乗せされます。</li>
+                <li><strong>太字</strong>と<strong>読みやすさ優先</strong>：飾りの少ない文字で、文字と行の間隔を広げます。ディスレクシアの助けになることがあります。</li>
+                <li><strong>コントラスト</strong>：どのテーマでも文字が背景の上で読みやすいよう色を調整し、<strong>ハイコントラスト</strong>ではその差をさらに強めます。</li>
+                <li><strong>色覚</strong>：赤、緑、青を感じにくい人のために、見分けにくい違いがほかの色で現れるよう色をずらします。色を補正するものであり、色覚異常を模倣するものではありません。</li>
+                <li><strong>動きを減らす</strong>：続くアニメーションは止まり、画面の切り替えは短くなります。呼吸の練習のように何かを導く動きは、それが練習の目的なので続きます。ひとりでに動くものは一時停止もできます。</li>
+                <li><strong>スクリーンリーダー</strong>：ボタン、スイッチ、画像には説明があり、設定は見出しの下にまとめられ、「保存しました」や移行の進み具合などのメッセージが読み上げられます。</li>
+                <li><strong>パソコンでは</strong>：Alt または F10 で開ける通常のメニューバー（ファイル、移動、表示、ヘルプ）、キーボードショートカット、見やすいフォーカス枠、Esc で戻る操作。</li>
+            </ul>
+
+            <h3>わかっている限界</h3>
+            <ul>
+                <li>すべての画面を TalkBack、NVDA、JAWS、またはキーボードだけで手作業で確かめたわけではありません。古い画面の一部には、スクリーンリーダーがボタンとして読み上げないボタンが残っているかもしれません。順に見直しています。</li>
+                <li>Windows でスクリーンリーダーを使うには、一度だけ Java Access Bridge を有効にする必要があります（<code>jabswitch -enable</code> を実行）。Linux では、デスクトップ版はまだスクリーンリーダーで使えません。</li>
+                <li>装飾用のイラストの一部は、独自の色のままです。</li>
+            </ul>
+
+            <h2>ご連絡ください</h2>
+            <p>読めない画面、届かないボタン、このページの誤った記述など、困ることがあれば <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a> までお知らせください。すべてのメッセージに私が自分で目を通します。</p>
+            <p class="lead">最終更新：2026 年 11 月</p>
+        </article>
+
+        <!-- ===================== 한국어 ===================== -->
+        <article class="trust" lang="ko">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>데이터와 접근성</h1>
+            <p class="lead">Evanescent Echo의 모든 앱은 두 가지 공통 기반 위에 만들어집니다. 하나는 당신이 쓰고, 녹음하고, 촬영한 것을 기기 안에서 보호하고, 다른 하나는 각 앱이 당신이 읽고, 보고, 움직이는 방식에 맞추도록 합니다. 이 페이지는 이 기반들이 당신을 위해 무엇을 하는지, 그리고 한계는 어디인지 쉬운 말로 설명합니다.</p>
+
+            <div class="notice">
+                <p><strong>솔직한 안내.</strong> 저는 보안과 디지털 접근성에 관해 널리 인정된 좋은 관행(웹 콘텐츠 접근성 지침 WCAG 2.2, AA 수준)을 따르도록 앱을 설계합니다. 이것은 목표이지 인증이 아닙니다. 어떤 규제 기관, 인증 기관, 독립 감사인도 이 앱이나 이 페이지를 검토하거나 승인하지 않았습니다. 이 페이지는 앱이 하는 일을 설명할 뿐, 어떤 법이나 표준을 준수한다고 주장하지 않습니다.</p>
+            </div>
+
+            <h2>당신의 데이터</h2>
+
+            <h3>기기에 그대로 머뭅니다</h3>
+            <p>계정도, 서버도, 클라우드도 없습니다. 앱에는 광고가 없고 통계나 원격 측정 데이터를 보내지 않습니다. 당신이 보관하는 것은 휴대폰이나 컴퓨터에 있으며, 다른 곳으로 보낼지는 오직 당신이 정합니다.</p>
+
+            <h3>저장될 때 암호화됩니다</h3>
+            <p>기록, 녹음, 사진은 널리 쓰이고 공개적으로 검토된 암호화 라이브러리인 libsodium으로 기기에서 암호화됩니다. 이를 여는 키는 시스템이 보호합니다. Android에서는 안전한 키 저장소, Windows에서는 사용자 보호 저장소, 그리고 이에 해당하는 것이 없는 Linux에서는 당신이 정한 비밀번호입니다.</p>
+
+            <h3>당신만 열 수 있는 백업</h3>
+            <p>백업 파일은 비밀번호로 봉인할 수 있습니다. 비밀번호는 Argon2id로 키가 되어 추측하는 데 오래 걸리게 하고, 내용은 XChaCha20-Poly1305로 암호화되어 파일이 변경되었는지도 감지합니다. 비밀번호 없이는 저를 포함해 아무도 백업을 읽을 수 없습니다. 그래서 잊어버린 비밀번호는 복구할 수 없습니다.</p>
+
+            <h3>인터넷 없이 다른 기기로</h3>
+            <p>휴대폰에서 컴퓨터로(또는 반대로) 데이터를 옮기려면 두 기기가 같은 로컬 네트워크에 있어야 합니다. 한 화면에 표시된 짧은 코드를 다른 화면에 입력해 연결합니다. 코드는 네트워크로 전송되지 않으며, 틀린 코드로는 코드에 대해 아무것도 알아낼 수 없습니다. 몇 번 실패하거나 10분이 지나면 코드는 더 이상 쓸 수 없습니다. 인터넷이나 서버를 거치는 것은 아무것도 없습니다.</p>
+
+            <h3>권한</h3>
+            <p>각 앱은 사용하는 것만 요청합니다. 네트워크 권한은 당신의 기기 사이에서 이루어지는 로컬 전송에만 쓰입니다. Sill처럼 필요 없는 앱은 어떤 권한도 요청하지 않습니다.</p>
+
+            <h2>당신의 접근성</h2>
+            <p>이 목록의 모든 설정은 앱 전체에 실제로 적용됩니다. 설정이 말한 대로 할 수 없다면 아예 제공하지 않습니다.</p>
+            <ul>
+                <li><strong>글자 크기 최대 200 %</strong>, 시스템에서 고른 크기에 더해집니다.</li>
+                <li><strong>굵은 글자</strong>와 <strong>더 쉬운 읽기</strong>: 단순한 글꼴에 글자와 줄 사이 간격을 넓혀 난독증에 도움이 될 수 있습니다.</li>
+                <li><strong>대비</strong>: 모든 테마의 색을 조정해 글자가 배경 위에서 잘 읽히게 하고, <strong>고대비</strong>는 그 차이를 더 크게 합니다.</li>
+                <li><strong>색각</strong>: 빨강, 초록, 파랑을 덜 느끼는 사람을 위해, 놓치기 쉬운 차이가 다른 색으로 드러나도록 색을 옮깁니다. 색을 보정하는 것이지 색각 이상을 흉내 내는 것이 아닙니다.</li>
+                <li><strong>움직임 줄이기</strong>: 계속되는 애니메이션은 멈추고 화면 전환은 짧아집니다. 호흡 연습처럼 무언가를 안내하는 움직임은 그것이 연습의 목적이라 계속됩니다. 스스로 움직이는 것은 일시 정지할 수도 있습니다.</li>
+                <li><strong>화면 낭독기</strong>: 버튼, 스위치, 이미지에 설명이 있고, 설정은 제목 아래에 묶여 있으며, '저장됨'이나 전송 진행 상황 같은 메시지를 읽어 줍니다.</li>
+                <li><strong>컴퓨터에서</strong>: Alt 또는 F10으로 여는 일반 메뉴 막대(파일, 이동, 보기, 도움말), 키보드 단축키, 잘 보이는 포커스 테두리, 그리고 Esc로 돌아가기.</li>
+            </ul>
+
+            <h3>알려진 한계</h3>
+            <ul>
+                <li>아직 모든 화면을 TalkBack, NVDA, JAWS나 키보드만으로 직접 시험해 보지는 못했습니다. 오래된 일부 화면에는 화면 낭독기가 버튼으로 읽지 않는 버튼이 남아 있을 수 있으며, 하나씩 점검하고 있습니다.</li>
+                <li>Windows에서 화면 낭독기를 쓰려면 Java Access Bridge를 한 번 켜야 합니다(<code>jabswitch -enable</code> 실행). Linux에서는 데스크톱 버전을 아직 화면 낭독기와 함께 쓸 수 없습니다.</li>
+                <li>일부 장식용 그림은 고유한 색을 유지합니다.</li>
+            </ul>
+
+            <h2>연락 주세요</h2>
+            <p>읽을 수 없는 화면, 닿지 않는 버튼, 이 페이지의 잘못된 내용 등 불편한 점이 있다면 <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>로 알려 주세요. 모든 메시지를 제가 직접 읽습니다.</p>
+            <p class="lead">마지막 업데이트: 2026년 11월</p>
+        </article>
+
+        <!-- ===================== 中文 ===================== -->
+        <article class="trust" lang="zh">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>你的数据与无障碍</h1>
+            <p class="lead">Evanescent Echo 的每个应用都建立在两个共同的基础之上：一个让你写下、录下和拍下的内容留在你的设备上并受到保护，另一个让每个应用适应你阅读、观看和操作的方式。本页用简单的话说明它们为你做了什么，以及它们的局限在哪里。</p>
+
+            <div class="notice">
+                <p><strong>坦诚说明。</strong> 我按照公认的安全与数字无障碍良好实践（《Web 内容无障碍指南》WCAG 2.2，AA 级）来设计这些应用。这是目标，而不是认证：没有任何监管机构、认证机构或独立审计方审查或批准过这些应用或本页面。本页面描述应用做了什么，并不声称它们符合任何法律或标准。</p>
+            </div>
+
+            <h2>你的数据</h2>
+
+            <h3>数据留在你的设备上</h3>
+            <p>没有账户，没有服务器，也没有云端。应用没有广告，也不发送统计或遥测数据。你保存的内容就在你的手机或电脑上，是否发送到别处只由你决定。</p>
+
+            <h3>存储时加密</h3>
+            <p>文字、录音和照片在设备上使用 libsodium 加密，这是一个被广泛使用并公开审查过的密码学库。打开它们的密钥由系统保护：Android 上是安全密钥存储，Windows 上是用户受保护的存储，而在没有同类机制的 Linux 上，则是你自己设置的密码。</p>
+
+            <h3>只有你能打开的备份</h3>
+            <p>备份文件可以用密码封存。密码通过 Argon2id 转换为密钥，使猜测变得缓慢；内容使用 XChaCha20-Poly1305 加密，还能发现文件是否被篡改。没有密码，任何人都无法读取备份，包括我。这也意味着忘记的密码无法找回。</p>
+
+            <h3>不经互联网转移到另一台设备</h3>
+            <p>要把数据从手机转到电脑（或反过来），两台设备需要在同一个本地网络中。它们通过一个短码配对：短码显示在一个屏幕上，在另一个屏幕上输入。短码从不通过网络发送，输错的短码也无法让人推断出它的任何信息。几次失败之后，或者十分钟后，短码就会失效。没有任何内容经过互联网或服务器。</p>
+
+            <h3>权限</h3>
+            <p>每个应用只请求它会用到的权限。网络权限只用于你自己的设备之间的本地转移。像 Sill 这样不需要网络的应用，不请求任何权限。</p>
+
+            <h2>无障碍</h2>
+            <p>下面的每一项设置都会真正应用到整个应用中。如果某项设置做不到它所说的，就不会提供。</p>
+            <ul>
+                <li><strong>文字最大可到 200 %</strong>，在你系统中选择的大小之上叠加。</li>
+                <li><strong>粗体文字</strong>和<strong>更易阅读</strong>：使用简洁字形，加大字母间距和行距，可能对阅读障碍有所帮助。</li>
+                <li><strong>对比度</strong>：每个主题的颜色都会调整，使文字在背景上保持清晰可读；<strong>高对比度</strong>会让这种差异更明显。</li>
+                <li><strong>色觉</strong>：对于不太能分辨红色、绿色或蓝色的人，应用会调整颜色，让原本看不出的差别在其他颜色中显现。它是在校正颜色，而不是模拟色盲。</li>
+                <li><strong>减少动态效果</strong>：持续的动画会停止，过渡会变短。引导性的动作（例如呼吸练习）会继续，因为那正是练习的意义；任何自行运动的内容也都可以暂停。</li>
+                <li><strong>屏幕阅读器</strong>：按钮、开关和图片都有描述，设置按标题分组，“已保存”或转移进度等消息会被朗读出来。</li>
+                <li><strong>在电脑上</strong>：可用 Alt 或 F10 打开的标准菜单栏（文件、转到、视图、帮助）、键盘快捷键、清晰可见的焦点边框，以及按 Esc 返回。</li>
+            </ul>
+
+            <h3>已知局限</h3>
+            <ul>
+                <li>并非每个界面都已用 TalkBack、NVDA、JAWS 或仅用键盘亲手测试过。一些较早的界面可能仍有屏幕阅读器不会读作“按钮”的按钮，我正在逐一检查。</li>
+                <li>在 Windows 上，屏幕阅读器需要先启用一次 Java Access Bridge（运行 <code>jabswitch -enable</code>）。在 Linux 上，桌面版目前还无法配合屏幕阅读器使用。</li>
+                <li>部分装饰性插图保留其原有颜色。</li>
+            </ul>
+
+            <h2>写信给我</h2>
+            <p>如果有什么妨碍了你——读不了的界面、点不到的按钮、本页中不正确的说法——请写信到 <a href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>。每一封信我都会亲自阅读。</p>
+            <p class="lead">最后更新：2026 年 11 月</p>
         </article>
     </main>
 
