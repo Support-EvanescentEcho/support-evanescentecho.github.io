@@ -62,7 +62,8 @@ const translations = {
         supportNote: "Every tool is free, with no ads and no telemetry. Evanescent Echo is made by one person and lives on voluntary support.",
         btnKofi: "Support Evanescent Echo on Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. All rights reserved. Independently crafted.",
-        footerTrust: "Your data and your access"
+        footerTrust: "Your data and your access",
+        footerInstall: "Installing on Windows and Linux"
     },
     es: {
         studioBadge: "Proyecto independiente",
@@ -101,7 +102,8 @@ const translations = {
         supportNote: "Todas las herramientas son gratuitas, sin anuncios ni telemetría. Evanescent Echo lo hace una sola persona y vive del apoyo voluntario.",
         btnKofi: "Apoya a Evanescent Echo en Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. Todos los derechos reservados. Desarrollo artesanal independiente.",
-        footerTrust: "Tus datos y tu acceso"
+        footerTrust: "Tus datos y tu acceso",
+        footerInstall: "Instalar en Windows y Linux"
     },
     de: {
         studioBadge: "Unabhängiges Projekt",
@@ -140,7 +142,8 @@ const translations = {
         supportNote: "Alle Werkzeuge sind kostenlos, ohne Werbung und ohne Telemetrie. Evanescent Echo wird von einer einzigen Person entwickelt und lebt von freiwilliger Unterstützung.",
         btnKofi: "Evanescent Echo auf Ko-fi unterstützen",
         footerCopy: "© 2026 Evanescent Echo. Alle Rechte vorbehalten. Unabhängig entwickelt.",
-        footerTrust: "Deine Daten und dein Zugang"
+        footerTrust: "Deine Daten und dein Zugang",
+        footerInstall: "Installation unter Windows und Linux"
     },
     fr: {
         studioBadge: "Projet indépendant",
@@ -179,7 +182,8 @@ const translations = {
         supportNote: "Tous les outils sont gratuits, sans publicité ni télémétrie. Evanescent Echo est l'œuvre d'une seule personne et vit du soutien volontaire.",
         btnKofi: "Soutenir Evanescent Echo sur Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. Tous droits réservés. Développement indépendant.",
-        footerTrust: "Vos données et votre accès"
+        footerTrust: "Vos données et votre accès",
+        footerInstall: "Installer sous Windows et Linux"
     },
     it: {
         studioBadge: "Progetto indipendente",
@@ -218,7 +222,8 @@ const translations = {
         supportNote: "Tutti gli strumenti sono gratuiti, senza pubblicità né telemetria. Evanescent Echo è realizzato da una sola persona e vive del supporto volontario.",
         btnKofi: "Sostieni Evanescent Echo su Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. Tutti i diritti riservati. Sviluppo artigianale indipendente.",
-        footerTrust: "I tuoi dati e il tuo accesso"
+        footerTrust: "I tuoi dati e il tuo accesso",
+        footerInstall: "Installare su Windows e Linux"
     },
     ja: {
         studioBadge: "個人開発",
@@ -257,7 +262,8 @@ const translations = {
         supportNote: "すべてのツールは無料で、広告もテレメトリーもありません。Evanescent Echo はひとりで開発しており、自発的な支援によって続いています。",
         btnKofi: "Ko-fi で Evanescent Echo を応援する",
         footerCopy: "© 2026 Evanescent Echo. All rights reserved. 個人開発。",
-        footerTrust: "データとアクセシビリティ"
+        footerTrust: "データとアクセシビリティ",
+        footerInstall: "Windows と Linux へのインストール"
     },
     ko: {
         studioBadge: "1인 개발",
@@ -296,7 +302,8 @@ const translations = {
         supportNote: "모든 도구는 무료이며 광고도 텔레메트리도 없습니다. Evanescent Echo는 한 사람이 만들고, 자발적인 후원으로 이어집니다.",
         btnKofi: "Ko-fi에서 Evanescent Echo 후원하기",
         footerCopy: "© 2026 Evanescent Echo. All rights reserved. 독립 장인 개발.",
-        footerTrust: "데이터와 접근성"
+        footerTrust: "데이터와 접근성",
+        footerInstall: "Windows 및 Linux에 설치하기"
     },
     pt: {
         studioBadge: "Projeto independente",
@@ -335,7 +342,8 @@ const translations = {
         supportNote: "Todas as ferramentas são gratuitas, sem anúncios nem telemetria. A Evanescent Echo é feita por uma única pessoa e vive de apoio voluntário.",
         btnKofi: "Apoie a Evanescent Echo no Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. Todos os direitos reservados. Desenvolvimento independente.",
-        footerTrust: "Seus dados e seu acesso"
+        footerTrust: "Seus dados e seu acesso",
+        footerInstall: "Instalar no Windows e no Linux"
     },
     ru: {
         studioBadge: "Независимый проект",
@@ -374,7 +382,8 @@ const translations = {
         supportNote: "Все инструменты бесплатны, без рекламы и телеметрии. Evanescent Echo создаёт один человек, и проект живёт на добровольную поддержку.",
         btnKofi: "Поддержать Evanescent Echo на Ko-fi",
         footerCopy: "© 2026 Evanescent Echo. Все права защищены. Независимая разработка.",
-        footerTrust: "Ваши данные и доступность"
+        footerTrust: "Ваши данные и доступность",
+        footerInstall: "Установка в Windows и Linux"
     },
     zh: {
         studioBadge: "个人开发",
@@ -413,7 +422,8 @@ const translations = {
         supportNote: "所有工具均免费，无广告、无遥测。Evanescent Echo 由一个人开发，依靠自愿支持维持。",
         btnKofi: "在 Ko-fi 上支持 Evanescent Echo",
         footerCopy: "© 2026 Evanescent Echo. 保留所有权利。独立手工打造。",
-        footerTrust: "你的数据与无障碍"
+        footerTrust: "你的数据与无障碍",
+        footerInstall: "在 Windows 和 Linux 上安装"
     }
 };
 
@@ -463,7 +473,8 @@ function setLanguage(lang) {
         'support-note': dict.supportNote,
         'btn-kofi': dict.btnKofi,
         'footer-copy': dict.footerCopy,
-        'footer-trust': dict.footerTrust
+        'footer-trust': dict.footerTrust,
+        'footer-install': dict.footerInstall
     };
 
     for (const [id, val] of Object.entries(map)) {
@@ -481,8 +492,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const savedLang = localStorage.getItem('portal-lang');
     const supported = ['en', 'es', 'de', 'fr', 'it', 'ja', 'ko', 'pt', 'ru', 'zh'];
+    // ?lang=xx: las webs de cada proyecto enlazan aquí en el idioma que ya eligió el visitante
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    const savedLang = supported.includes(urlLang) ? urlLang : localStorage.getItem('portal-lang');
     if (savedLang && supported.includes(savedLang)) {
         setLanguage(savedLang);
     } else {

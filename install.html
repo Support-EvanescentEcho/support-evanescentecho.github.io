@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing the desktop apps — Evanescent Echo</title>
+    <meta name="description" content="Why the Windows and Linux installers of the Evanescent Echo apps are not signed, the SmartScreen warning, and how to check each download.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Suite accessibility layer (WCAG 2.2 AA base + visitor preferences) -->
+    <link rel="stylesheet" href="/evanescent-web-a11y/a11y.css">
+    <script src="/evanescent-web-a11y/a11y.js"></script>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <style>
+        /* Una sola página con un artículo por idioma */
+        .trust { display: none; max-width: 760px; margin: 0 auto; line-height: 1.7; }
+        body.lang-en .trust[lang="en"], body.lang-es .trust[lang="es"], body.lang-de .trust[lang="de"], body.lang-fr .trust[lang="fr"], body.lang-it .trust[lang="it"], body.lang-pt .trust[lang="pt"], body.lang-ru .trust[lang="ru"], body.lang-ja .trust[lang="ja"], body.lang-ko .trust[lang="ko"], body.lang-zh .trust[lang="zh"] { display: block; }
+        .trust h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .trust h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 500; color: var(--primary); margin: 2.5rem 0 0.75rem; }
+        .trust h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 0.4rem; }
+        .trust p, .trust li { color: var(--text); margin-bottom: 0.75rem; }
+        .trust ul { padding-left: 1.25rem; }
+        .trust .lead { font-size: 1.15rem; color: var(--text-muted); }
+        .trust .notice { border: 1px solid var(--border); background: var(--surface-variant); border-radius: 12px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+        .trust .notice strong { color: var(--primary); }
+        .trust a { color: var(--primary); }
+        .trust .back { display: inline-block; margin-bottom: 2rem; }
+        .trust ol { padding-left: 1.25rem; }
+        .trust pre { background: var(--surface-variant); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; overflow-x: auto; margin: 0 0 0.75rem; }
+        .trust pre code { font-size: 0.95rem; }
+    </style>
+</head>
+<body class="lang-en">
+
+    <header>
+        <a href="index.html" class="brand">
+            <img src="assets/evanescent_echo_seal.png" alt="" class="brand-icon">
+            <span class="brand-title" translate="no">Evanescent Echo</span>
+        </a>
+
+        <div class="controls" data-a11y-slot>
+            <select id="theme-select" class="select-control" onchange="setTheme(this.value)" aria-label="Theme">
+                <option value="light" id="theme-light">Light</option>
+                <option value="dark" id="theme-dark">Dark</option>
+                <option value="system" id="theme-system" selected>System</option>
+            </select>
+
+            <select id="lang-select" translate="no" class="select-control" onchange="setLanguage(this.value)" aria-label="Language">
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="ja">日本語</option>
+                <option value="ko">한국어</option>
+                <option value="pt">Português</option>
+                <option value="ru">Русский</option>
+                <option value="zh">中文</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===================== ENGLISH ===================== -->
+        <article class="trust" lang="en">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Installing the desktop apps</h1>
+            <p class="lead">The Windows and Linux versions of the Evanescent Echo apps are not digitally signed. This page explains what that means, the warning Windows will show you, and how to check that the file you downloaded is the original.</p>
+
+            <div class="notice">
+                <p><strong>Why they are not signed.</strong> Signing an installer means buying a publisher certificate every year or publishing through a store. I make these apps on my own, they are free and they have no payments, so for now I have chosen not to do either. Being unsigned does not change how your data is protected: it stays encrypted on your device, as explained in <a href="trust.html">Your data and your access</a>. What I cannot give you without a signature is Windows' guarantee of who published the installer. Checking the SHA-256, below, takes its place.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>What you will see</h3>
+            <p>When you open the installer, Windows SmartScreen may show a blue window that says <strong>“Windows protected your PC”</strong> and <strong>“Unknown publisher”</strong>. Your browser may also warn that the file is not commonly downloaded. This does not mean the file contains a virus: it means Windows does not know who published it, because it has no signature and few people have downloaded it yet.</p>
+
+            <h3>How to continue</h3>
+            <ol>
+                <li>Download only from the official website of each app or from its release page on GitHub.</li>
+                <li>Check the file as explained below.</li>
+                <li>Open the installer. If the warning appears, select <strong>“More info”</strong> and then <strong>“Run anyway”</strong>.</li>
+            </ol>
+            <p>You do not need to turn off SmartScreen or your antivirus, and I recommend that you don't. The exact words of the warning can change between versions of Windows.</p>
+
+            <h3>Check that the file is the original</h3>
+            <p>Without a signature, the way to know that nobody changed the file is to compare its SHA-256 fingerprint with the one shown next to the file on the official release page on GitHub. In PowerShell, in the folder where you saved it:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>The file names here are an example: use the name of the file you downloaded. If the two values are not identical, do not install it, delete the file and write to me.</p>
+
+            <h2>Linux</h2>
+            <p>The <code translate="no">.deb</code> package is not signed either. Check it the same way before installing it:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Then install it with:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>On Linux the app asks you to choose a password to protect your diary, because Linux has no protected key storage equivalent to the one on Windows. Keep it safe: without it, the data cannot be opened.</p>
+
+            <h2>Write to me</h2>
+            <p>If a fingerprint does not match, an installer behaves strangely or something on this page is wrong, please write to <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. I read every message myself.</p>
+            <p class="lead">Last updated: November 2026.</p>
+        </article>
+        <!-- ===================== ESPAÑOL ===================== -->
+        <article class="trust" lang="es">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Instalar las apps de escritorio</h1>
+            <p class="lead">Las versiones para Windows y Linux de las apps de Evanescent Echo no tienen firma digital. Esta página explica qué significa, el aviso que te mostrará Windows y cómo comprobar que el archivo que descargaste es el original.</p>
+
+            <div class="notice">
+                <p><strong>Por qué no están firmadas.</strong> Firmar un instalador exige comprar cada año un certificado de editor o publicar a través de una tienda. Hago estas apps por mi cuenta, son gratuitas y no tienen cobros, así que por ahora he decidido no hacer ninguna de las dos cosas. Que no estén firmadas no cambia cómo se protegen tus datos: siguen cifrados en tu dispositivo, como explica <a href="trust.html">Tus datos y tu acceso</a>. Lo que no puedo darte sin firma es la garantía de Windows sobre quién publicó el instalador. Comprobar el SHA-256, más abajo, la sustituye.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>Qué vas a ver</h3>
+            <p>Al abrir el instalador, Windows SmartScreen puede mostrar una ventana azul que dice <strong>«Windows protegió su PC»</strong> y <strong>«Editor desconocido»</strong>. El navegador también puede avisar de que el archivo no se descarga con frecuencia. Eso no significa que el archivo tenga un virus: significa que Windows no sabe quién lo publicó, porque no tiene firma y todavía lo ha descargado poca gente.</p>
+
+            <h3>Cómo continuar</h3>
+            <ol>
+                <li>Descarga solo desde la web oficial de cada app o desde su página de versiones en GitHub.</li>
+                <li>Comprueba el archivo como se explica más abajo.</li>
+                <li>Abre el instalador. Si aparece el aviso, elige <strong>«Más información»</strong> y luego <strong>«Ejecutar de todas formas»</strong>.</li>
+            </ol>
+            <p>No hace falta desactivar SmartScreen ni el antivirus, y te recomiendo no hacerlo. Las palabras exactas del aviso pueden cambiar según la versión de Windows.</p>
+
+            <h3>Comprueba que el archivo es el original</h3>
+            <p>Sin firma, la forma de saber que nadie modificó el archivo es comparar su huella SHA-256 con la que aparece junto al archivo en la página oficial de versiones en GitHub. En PowerShell, en la carpeta donde lo guardaste:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>Los nombres de archivo son un ejemplo: usa el nombre del archivo que descargaste. Si los dos valores no son idénticos, no lo instales, borra el archivo y escríbeme.</p>
+
+            <h2>Linux</h2>
+            <p>El paquete <code translate="no">.deb</code> tampoco está firmado. Compruébalo igual antes de instalarlo:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Después instálalo con:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>En Linux la app te pide elegir una contraseña para proteger tu diario, porque Linux no tiene un almacén de claves protegido equivalente al de Windows. Guárdala bien: sin ella, los datos no se pueden abrir.</p>
+
+            <h2>Escríbeme</h2>
+            <p>Si una huella no coincide, un instalador se comporta de forma extraña o algo de esta página es incorrecto, escríbeme a <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leo cada mensaje personalmente.</p>
+            <p class="lead">Última actualización: noviembre de 2026.</p>
+        </article>
+        <!-- ===================== DEUTSCH ===================== -->
+        <article class="trust" lang="de">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Die Desktop-Apps installieren</h1>
+            <p class="lead">Die Windows- und Linux-Versionen der Evanescent-Echo-Apps sind nicht digital signiert. Diese Seite erklärt, was das bedeutet, welche Warnung Windows dir zeigt und wie du prüfst, ob die heruntergeladene Datei das Original ist.</p>
+
+            <div class="notice">
+                <p><strong>Warum sie nicht signiert sind.</strong> Um ein Installationsprogramm zu signieren, muss man jedes Jahr ein Herausgeberzertifikat kaufen oder über einen Store veröffentlichen. Ich entwickle diese Apps allein, sie sind kostenlos und haben keine Bezahlfunktionen, deshalb habe ich mich vorerst gegen beides entschieden. Die fehlende Signatur ändert nichts daran, wie deine Daten geschützt sind: Sie bleiben verschlüsselt auf deinem Gerät, wie unter <a href="trust.html">Deine Daten und dein Zugang</a> erklärt. Was ich dir ohne Signatur nicht geben kann, ist die Bestätigung von Windows, wer das Installationsprogramm veröffentlicht hat. Die Prüfung des SHA-256 weiter unten ersetzt sie.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>Was du sehen wirst</h3>
+            <p>Wenn du das Installationsprogramm öffnest, zeigt Windows SmartScreen möglicherweise ein blaues Fenster mit <strong>„Der Computer wurde durch Windows geschützt“</strong> und <strong>„Unbekannter Herausgeber“</strong>. Auch dein Browser warnt vielleicht, dass die Datei selten heruntergeladen wird. Das heißt nicht, dass die Datei einen Virus enthält: Windows weiß nur nicht, wer sie veröffentlicht hat, weil sie keine Signatur hat und erst wenige sie heruntergeladen haben.</p>
+
+            <h3>So geht es weiter</h3>
+            <ol>
+                <li>Lade nur von der offiziellen Website der jeweiligen App oder von ihrer Release-Seite auf GitHub herunter.</li>
+                <li>Prüfe die Datei wie unten beschrieben.</li>
+                <li>Öffne das Installationsprogramm. Wenn die Warnung erscheint, wähle <strong>„Weitere Informationen“</strong> und dann <strong>„Trotzdem ausführen“</strong>.</li>
+            </ol>
+            <p>Du musst SmartScreen oder dein Antivirenprogramm nicht ausschalten, und ich rate dir davon ab. Der genaue Wortlaut der Warnung kann sich je nach Windows-Version unterscheiden.</p>
+
+            <h3>Prüfen, ob die Datei das Original ist</h3>
+            <p>Ohne Signatur erkennst du, dass niemand die Datei verändert hat, indem du ihren SHA-256-Fingerabdruck mit dem vergleichst, der neben der Datei auf der offiziellen Release-Seite auf GitHub steht. In PowerShell, im Ordner, in dem du sie gespeichert hast:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>Die Dateinamen sind ein Beispiel: Verwende den Namen der Datei, die du heruntergeladen hast. Wenn die beiden Werte nicht identisch sind, installiere sie nicht, lösche die Datei und schreib mir.</p>
+
+            <h2>Linux</h2>
+            <p>Auch das <code translate="no">.deb</code>-Paket ist nicht signiert. Prüfe es vor der Installation auf dieselbe Weise:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Installiere es dann mit:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>Unter Linux bittet dich die App, ein Passwort zum Schutz deines Tagebuchs zu wählen, weil Linux keinen geschützten Schlüsselspeicher wie Windows hat. Bewahre es gut auf: Ohne es lassen sich die Daten nicht öffnen.</p>
+
+            <h2>Schreib mir</h2>
+            <p>Wenn ein Fingerabdruck nicht übereinstimmt, sich ein Installationsprogramm seltsam verhält oder etwas auf dieser Seite falsch ist, schreib mir bitte an <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Ich lese jede Nachricht selbst.</p>
+            <p class="lead">Zuletzt aktualisiert: November 2026.</p>
+        </article>
+        <!-- ===================== FRANÇAIS ===================== -->
+        <article class="trust" lang="fr">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Installer les applications de bureau</h1>
+            <p class="lead">Les versions Windows et Linux des applications Evanescent Echo ne sont pas signées numériquement. Cette page explique ce que cela signifie, l’avertissement que Windows vous affichera et comment vérifier que le fichier téléchargé est l’original.</p>
+
+            <div class="notice">
+                <p><strong>Pourquoi elles ne sont pas signées.</strong> Signer un programme d’installation impose d’acheter chaque année un certificat d’éditeur ou de publier via une boutique. Je crée ces applications seul, elles sont gratuites et sans paiement, j’ai donc choisi pour l’instant de ne faire ni l’un ni l’autre. L’absence de signature ne change rien à la protection de vos données : elles restent chiffrées sur votre appareil, comme l’explique <a href="trust.html">Vos données et votre accès</a>. Ce que je ne peux pas vous offrir sans signature, c’est la garantie de Windows sur l’éditeur du programme d’installation. La vérification du SHA-256, plus bas, la remplace.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>Ce que vous verrez</h3>
+            <p>En ouvrant le programme d’installation, Windows SmartScreen peut afficher une fenêtre bleue indiquant <strong>« Windows a protégé votre ordinateur »</strong> et <strong>« Éditeur inconnu »</strong>. Votre navigateur peut aussi signaler que le fichier est rarement téléchargé. Cela ne veut pas dire que le fichier contient un virus : Windows ne sait simplement pas qui l’a publié, car il n’est pas signé et peu de personnes l’ont encore téléchargé.</p>
+
+            <h3>Comment continuer</h3>
+            <ol>
+                <li>Téléchargez uniquement depuis le site officiel de chaque application ou depuis sa page de versions sur GitHub.</li>
+                <li>Vérifiez le fichier comme expliqué ci-dessous.</li>
+                <li>Ouvrez le programme d’installation. Si l’avertissement apparaît, choisissez <strong>« Informations complémentaires »</strong> puis <strong>« Exécuter quand même »</strong>.</li>
+            </ol>
+            <p>Vous n’avez pas besoin de désactiver SmartScreen ni votre antivirus, et je vous le déconseille. Le texte exact de l’avertissement peut varier selon la version de Windows.</p>
+
+            <h3>Vérifier que le fichier est l’original</h3>
+            <p>Sans signature, la façon de savoir que personne n’a modifié le fichier est de comparer son empreinte SHA-256 avec celle affichée à côté du fichier sur la page officielle des versions sur GitHub. Dans PowerShell, dans le dossier où vous l’avez enregistré :</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>Les noms de fichier sont un exemple : utilisez le nom du fichier que vous avez téléchargé. Si les deux valeurs ne sont pas identiques, ne l’installez pas, supprimez le fichier et écrivez-moi.</p>
+
+            <h2>Linux</h2>
+            <p>Le paquet <code translate="no">.deb</code> n’est pas signé non plus. Vérifiez-le de la même façon avant de l’installer :</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Installez-le ensuite avec :</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>Sous Linux, l’application vous demande de choisir un mot de passe pour protéger votre journal, car Linux n’a pas de stockage de clés protégé équivalent à celui de Windows. Conservez-le précieusement : sans lui, les données ne peuvent pas être ouvertes.</p>
+
+            <h2>Écrivez-moi</h2>
+            <p>Si une empreinte ne correspond pas, si un programme d’installation se comporte bizarrement ou si quelque chose sur cette page est inexact, écrivez-moi à <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Je lis chaque message moi-même.</p>
+            <p class="lead">Dernière mise à jour : novembre 2026.</p>
+        </article>
+        <!-- ===================== ITALIANO ===================== -->
+        <article class="trust" lang="it">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Installare le app desktop</h1>
+            <p class="lead">Le versioni per Windows e Linux delle app di Evanescent Echo non hanno una firma digitale. Questa pagina spiega cosa significa, l’avviso che Windows ti mostrerà e come verificare che il file scaricato sia l’originale.</p>
+
+            <div class="notice">
+                <p><strong>Perché non sono firmate.</strong> Firmare un programma di installazione richiede di acquistare ogni anno un certificato di editore o di pubblicare tramite uno store. Creo queste app da solo, sono gratuite e senza pagamenti, quindi per ora ho scelto di non fare né l’una né l’altra cosa. L’assenza di firma non cambia il modo in cui i tuoi dati sono protetti: restano cifrati sul tuo dispositivo, come spiegato in <a href="trust.html">I tuoi dati e il tuo accesso</a>. Ciò che non posso darti senza firma è la garanzia di Windows su chi ha pubblicato il programma di installazione. La verifica dello SHA-256, più sotto, la sostituisce.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>Cosa vedrai</h3>
+            <p>Quando apri il programma di installazione, Windows SmartScreen può mostrare una finestra blu con <strong>«PC protetto da Windows»</strong> e <strong>«Autore sconosciuto»</strong>. Anche il browser può avvisare che il file viene scaricato raramente. Non significa che il file contenga un virus: Windows non sa chi lo ha pubblicato, perché non è firmato e poche persone lo hanno già scaricato.</p>
+
+            <h3>Come procedere</h3>
+            <ol>
+                <li>Scarica solo dal sito ufficiale di ciascuna app o dalla sua pagina delle versioni su GitHub.</li>
+                <li>Verifica il file come spiegato qui sotto.</li>
+                <li>Apri il programma di installazione. Se compare l’avviso, scegli <strong>«Ulteriori informazioni»</strong> e poi <strong>«Esegui comunque»</strong>.</li>
+            </ol>
+            <p>Non è necessario disattivare SmartScreen né l’antivirus, e ti consiglio di non farlo. Il testo esatto dell’avviso può cambiare a seconda della versione di Windows.</p>
+
+            <h3>Verifica che il file sia l’originale</h3>
+            <p>Senza firma, il modo per sapere che nessuno ha modificato il file è confrontare la sua impronta SHA-256 con quella mostrata accanto al file nella pagina ufficiale delle versioni su GitHub. In PowerShell, nella cartella in cui l’hai salvato:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>I nomi dei file sono un esempio: usa il nome del file che hai scaricato. Se i due valori non sono identici, non installarlo, elimina il file e scrivimi.</p>
+
+            <h2>Linux</h2>
+            <p>Anche il pacchetto <code translate="no">.deb</code> non è firmato. Verificalo allo stesso modo prima di installarlo:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Poi installalo con:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>Su Linux l’app ti chiede di scegliere una password per proteggere il tuo diario, perché Linux non ha un archivio di chiavi protetto equivalente a quello di Windows. Conservala con cura: senza di essa i dati non si possono aprire.</p>
+
+            <h2>Scrivimi</h2>
+            <p>Se un’impronta non corrisponde, un programma di installazione si comporta in modo strano o qualcosa in questa pagina è sbagliato, scrivimi a <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leggo ogni messaggio personalmente.</p>
+            <p class="lead">Ultimo aggiornamento: novembre 2026.</p>
+        </article>
+        <!-- ===================== 日本語 ===================== -->
+        <article class="trust" lang="ja">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>デスクトップ版のインストール</h1>
+            <p class="lead">Evanescent Echo のアプリの Windows 版と Linux 版には、デジタル署名がありません。このページでは、それが何を意味するのか、Windows が表示する警告、そしてダウンロードしたファイルが本物かどうかを確認する方法を説明します。</p>
+
+            <div class="notice">
+                <p><strong>署名していない理由</strong> インストーラーに署名するには、毎年発行元の証明書を購入するか、ストアを通じて公開する必要があります。私はこれらのアプリを一人で作っており、無料で課金もないため、今のところどちらも行わないことにしました。署名がなくても、データの保護方法は変わりません。<a href="trust.html">データとアクセシビリティ</a>で説明しているとおり、データはデバイス上で暗号化されたままです。署名なしでは、誰がインストーラーを公開したかという Windows の保証を提供できません。その代わりとなるのが、下の SHA-256 の確認です。</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>表示される警告</h3>
+            <p>インストーラーを開くと、Windows SmartScreen が <strong>「WindowsによってPCが保護されました」</strong> と <strong>「不明な発行元」</strong> という青い画面を表示することがあります。ブラウザーも、このファイルはあまりダウンロードされていないと警告する場合があります。これはファイルにウイルスが含まれているという意味ではありません。署名がなく、まだダウンロードした人が少ないため、Windows が発行元を判断できないということです。</p>
+
+            <h3>続行する方法</h3>
+            <ol>
+                <li>各アプリの公式サイト、または GitHub のリリースページからのみダウンロードしてください。</li>
+                <li>下の説明に従ってファイルを確認してください。</li>
+                <li>インストーラーを開きます。警告が表示されたら <strong>「詳細情報」</strong> を選び、次に <strong>「実行」</strong> を選びます。</li>
+            </ol>
+            <p>SmartScreen やウイルス対策ソフトを無効にする必要はなく、無効にしないことをおすすめします。警告の正確な文言は Windows のバージョンによって異なる場合があります。</p>
+
+            <h3>ファイルが本物か確認する</h3>
+            <p>署名がない場合、誰もファイルを改変していないことを確かめるには、その SHA-256 フィンガープリントを、GitHub の公式リリースページでファイルの横に表示されている値と比べます。保存したフォルダーで、PowerShell を使って次を実行します。</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>ファイル名は例です。ダウンロードしたファイルの名前に置き換えてください。 2つの値が完全に一致しない場合は、インストールせずにファイルを削除し、私に連絡してください。</p>
+
+            <h2>Linux</h2>
+            <p><code translate="no">.deb</code> パッケージにも署名はありません。インストールする前に、同じ方法で確認してください。</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>その後、次のコマンドでインストールします。</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>Linux では、日記を保護するためのパスワードを決めるようアプリが求めます。Linux には Windows のような保護されたキー保存領域がないためです。大切に保管してください。パスワードがないとデータを開けません。</p>
+
+            <h2>ご連絡ください</h2>
+            <p>フィンガープリントが一致しない、インストーラーの動作がおかしい、このページの内容が間違っているなどの場合は、<a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a> までご連絡ください。すべてのメッセージに私自身が目を通します。</p>
+            <p class="lead">最終更新：2026年11月</p>
+        </article>
+        <!-- ===================== 한국어 ===================== -->
+        <article class="trust" lang="ko">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>데스크톱 앱 설치하기</h1>
+            <p class="lead">Evanescent Echo 앱의 Windows 및 Linux 버전에는 디지털 서명이 없습니다. 이 페이지에서는 그것이 무엇을 의미하는지, Windows가 보여 줄 경고, 그리고 내려받은 파일이 원본인지 확인하는 방법을 설명합니다.</p>
+
+            <div class="notice">
+                <p><strong>서명하지 않는 이유.</strong> 설치 프로그램에 서명하려면 매년 게시자 인증서를 구입하거나 스토어를 통해 배포해야 합니다. 저는 이 앱들을 혼자 만들고 있고, 앱은 무료이며 결제 기능도 없기 때문에 지금은 둘 다 하지 않기로 했습니다. 서명이 없어도 데이터가 보호되는 방식은 달라지지 않습니다. <a href="trust.html">데이터와 접근성</a>에서 설명하듯이 데이터는 기기에 암호화된 채로 남아 있습니다. 서명 없이는 누가 설치 프로그램을 게시했는지에 대한 Windows의 보증을 드릴 수 없습니다. 아래의 SHA-256 확인이 그 역할을 대신합니다.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>보게 될 화면</h3>
+            <p>설치 프로그램을 열면 Windows SmartScreen이 <strong>“Windows의 PC 보호”</strong>와 <strong>“알 수 없는 게시자”</strong>라고 표시된 파란 창을 보여 줄 수 있습니다. 브라우저도 이 파일이 자주 다운로드되지 않는다고 경고할 수 있습니다. 이는 파일에 바이러스가 있다는 뜻이 아닙니다. 서명이 없고 아직 내려받은 사람이 적어서 Windows가 게시자를 알 수 없다는 뜻입니다.</p>
+
+            <h3>계속하는 방법</h3>
+            <ol>
+                <li>각 앱의 공식 웹사이트나 GitHub의 릴리스 페이지에서만 내려받으세요.</li>
+                <li>아래 설명대로 파일을 확인하세요.</li>
+                <li>설치 프로그램을 엽니다. 경고가 나타나면 <strong>“추가 정보”</strong>를 선택한 다음 <strong>“실행”</strong>을 선택하세요.</li>
+            </ol>
+            <p>SmartScreen이나 백신 프로그램을 끌 필요는 없으며, 끄지 않기를 권합니다. 경고 문구는 Windows 버전에 따라 다를 수 있습니다.</p>
+
+            <h3>파일이 원본인지 확인하기</h3>
+            <p>서명이 없을 때 아무도 파일을 바꾸지 않았는지 확인하는 방법은 파일의 SHA-256 지문을 GitHub 공식 릴리스 페이지에서 파일 옆에 표시된 값과 비교하는 것입니다. 파일을 저장한 폴더에서 PowerShell로 다음을 실행하세요.</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>파일 이름은 예시입니다. 내려받은 파일의 이름을 사용하세요. 두 값이 정확히 같지 않으면 설치하지 말고 파일을 삭제한 뒤 저에게 알려 주세요.</p>
+
+            <h2>Linux</h2>
+            <p><code translate="no">.deb</code> 패키지도 서명되어 있지 않습니다. 설치하기 전에 같은 방법으로 확인하세요.</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>그런 다음 다음 명령으로 설치합니다.</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>Linux에서는 일기를 보호할 비밀번호를 정하라고 앱이 요청합니다. Linux에는 Windows와 같은 보호된 키 저장소가 없기 때문입니다. 잘 보관하세요. 비밀번호가 없으면 데이터를 열 수 없습니다.</p>
+
+            <h2>연락 주세요</h2>
+            <p>지문이 일치하지 않거나, 설치 프로그램이 이상하게 동작하거나, 이 페이지에 틀린 내용이 있으면 <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>로 연락해 주세요. 모든 메시지를 제가 직접 읽습니다.</p>
+            <p class="lead">최종 업데이트: 2026년 11월</p>
+        </article>
+        <!-- ===================== PORTUGUÊS ===================== -->
+        <article class="trust" lang="pt">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Instalar os aplicativos para computador</h1>
+            <p class="lead">As versões para Windows e Linux dos aplicativos Evanescent Echo não têm assinatura digital. Esta página explica o que isso significa, o aviso que o Windows vai mostrar e como verificar se o arquivo que você baixou é o original.</p>
+
+            <div class="notice">
+                <p><strong>Por que não são assinados.</strong> Assinar um instalador exige comprar todo ano um certificado de editor ou publicar por meio de uma loja. Faço estes aplicativos sozinho, eles são gratuitos e não têm cobranças, então por enquanto decidi não fazer nenhuma das duas coisas. A falta de assinatura não muda a forma como seus dados são protegidos: eles continuam criptografados no seu dispositivo, como explica <a href="trust.html">Seus dados e seu acesso</a>. O que não posso oferecer sem assinatura é a garantia do Windows sobre quem publicou o instalador. A verificação do SHA-256, mais abaixo, a substitui.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>O que você vai ver</h3>
+            <p>Ao abrir o instalador, o Windows SmartScreen pode mostrar uma janela azul com <strong>“O Windows protegeu o computador”</strong> e <strong>“Editor desconhecido”</strong>. O navegador também pode avisar que o arquivo não é baixado com frequência. Isso não significa que o arquivo tenha vírus: significa que o Windows não sabe quem o publicou, porque ele não tem assinatura e poucas pessoas o baixaram até agora.</p>
+
+            <h3>Como continuar</h3>
+            <ol>
+                <li>Baixe apenas do site oficial de cada aplicativo ou da página de versões dele no GitHub.</li>
+                <li>Verifique o arquivo como explicado abaixo.</li>
+                <li>Abra o instalador. Se o aviso aparecer, escolha <strong>“Mais informações”</strong> e depois <strong>“Executar assim mesmo”</strong>.</li>
+            </ol>
+            <p>Não é preciso desativar o SmartScreen nem o antivírus, e recomendo não fazer isso. As palavras exatas do aviso podem mudar conforme a versão do Windows.</p>
+
+            <h3>Verifique se o arquivo é o original</h3>
+            <p>Sem assinatura, a forma de saber que ninguém alterou o arquivo é comparar a impressão digital SHA-256 dele com a que aparece ao lado do arquivo na página oficial de versões no GitHub. No PowerShell, na pasta onde você o salvou:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>Os nomes de arquivo são um exemplo: use o nome do arquivo que você baixou. Se os dois valores não forem idênticos, não instale, apague o arquivo e me escreva.</p>
+
+            <h2>Linux</h2>
+            <p>O pacote <code translate="no">.deb</code> também não é assinado. Verifique-o da mesma forma antes de instalar:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Depois instale com:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>No Linux, o aplicativo pede que você escolha uma senha para proteger seu diário, porque o Linux não tem um armazenamento de chaves protegido equivalente ao do Windows. Guarde-a bem: sem ela, os dados não podem ser abertos.</p>
+
+            <h2>Escreva para mim</h2>
+            <p>Se uma impressão digital não coincidir, um instalador se comportar de forma estranha ou algo nesta página estiver errado, escreva para <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Leio cada mensagem pessoalmente.</p>
+            <p class="lead">Última atualização: novembro de 2026.</p>
+        </article>
+        <!-- ===================== РУССКИЙ ===================== -->
+        <article class="trust" lang="ru">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>Установка версий для компьютера</h1>
+            <p class="lead">Версии приложений Evanescent Echo для Windows и Linux не имеют цифровой подписи. На этой странице объясняется, что это значит, какое предупреждение покажет Windows и как проверить, что скачанный файл — оригинальный.</p>
+
+            <div class="notice">
+                <p><strong>Почему они не подписаны.</strong> Чтобы подписать установщик, нужно каждый год покупать сертификат издателя или публиковать приложение через магазин. Я делаю эти приложения один, они бесплатные и без платежей, поэтому пока решил не делать ни того, ни другого. Отсутствие подписи не меняет того, как защищены ваши данные: они по-прежнему зашифрованы на вашем устройстве, как описано на странице <a href="trust.html">Ваши данные и доступность</a>. Без подписи я не могу дать вам гарантию Windows о том, кто опубликовал установщик. Её заменяет проверка SHA-256, описанная ниже.</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>Что вы увидите</h3>
+            <p>При запуске установщика Windows SmartScreen может показать синее окно с надписями <strong>«Система Windows защитила ваш компьютер»</strong> и <strong>«Неизвестный издатель»</strong>. Браузер тоже может предупредить, что файл скачивают редко. Это не значит, что в файле вирус: просто Windows не знает, кто его опубликовал, потому что у файла нет подписи и его пока скачали немногие.</p>
+
+            <h3>Как продолжить</h3>
+            <ol>
+                <li>Скачивайте только с официального сайта приложения или с его страницы выпусков на GitHub.</li>
+                <li>Проверьте файл, как описано ниже.</li>
+                <li>Запустите установщик. Если появится предупреждение, нажмите <strong>«Подробнее»</strong>, а затем <strong>«Выполнить в любом случае»</strong>.</li>
+            </ol>
+            <p>Отключать SmartScreen или антивирус не нужно, и я не советую этого делать. Точный текст предупреждения может отличаться в разных версиях Windows.</p>
+
+            <h3>Проверьте, что файл оригинальный</h3>
+            <p>Без подписи убедиться, что файл никто не изменял, можно, сравнив его отпечаток SHA-256 с тем, что указан рядом с файлом на официальной странице выпусков на GitHub. В PowerShell, в папке, куда вы его сохранили:</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>Имена файлов приведены для примера: укажите имя скачанного файла. Если значения не совпадают полностью, не устанавливайте его, удалите файл и напишите мне.</p>
+
+            <h2>Linux</h2>
+            <p>Пакет <code translate="no">.deb</code> тоже не подписан. Проверьте его так же перед установкой:</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>Затем установите его командой:</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>В Linux приложение попросит вас придумать пароль для защиты дневника, потому что в Linux нет защищённого хранилища ключей, как в Windows. Храните его надёжно: без него данные открыть нельзя.</p>
+
+            <h2>Напишите мне</h2>
+            <p>Если отпечаток не совпадает, установщик ведёт себя странно или на этой странице что-то неверно, напишите на <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>. Я сам читаю каждое письмо.</p>
+            <p class="lead">Последнее обновление: ноябрь 2026 г.</p>
+        </article>
+        <!-- ===================== 中文 ===================== -->
+        <article class="trust" lang="zh">
+            <a href="index.html" class="back">← Evanescent Echo</a>
+            <h1>安装桌面版应用</h1>
+            <p class="lead">Evanescent Echo 应用的 Windows 版和 Linux 版没有数字签名。本页说明这意味着什么、Windows 会显示什么警告，以及如何确认你下载的文件是原始文件。</p>
+
+            <div class="notice">
+                <p><strong>为什么没有签名。</strong> 为安装程序签名，需要每年购买发布者证书，或通过应用商店发布。这些应用由我独自制作，免费且没有任何付费功能，所以目前我选择两者都不做。没有签名并不会改变你的数据受保护的方式：数据仍然加密保存在你的设备上，详见<a href="trust.html">你的数据与无障碍</a>。没有签名，我就无法提供 Windows 对安装程序发布者的担保。下面的 SHA-256 校验可以代替它。</p>
+            </div>
+
+            <h2>Windows</h2>
+
+            <h3>你会看到什么</h3>
+            <p>打开安装程序时，Windows SmartScreen 可能会显示一个蓝色窗口，写着<strong>“Windows 已保护你的电脑”</strong>和<strong>“未知发布者”</strong>。浏览器也可能提示该文件不常被下载。这并不表示文件含有病毒，而是因为它没有签名、下载的人还不多，Windows 无法确认发布者是谁。</p>
+
+            <h3>如何继续</h3>
+            <ol>
+                <li>只从各应用的官方网站或其 GitHub 发布页面下载。</li>
+                <li>按照下文说明校验文件。</li>
+                <li>打开安装程序。如果出现警告，请选择<strong>“更多信息”</strong>，然后选择<strong>“仍要运行”</strong>。</li>
+            </ol>
+            <p>你不需要关闭 SmartScreen 或杀毒软件，我也建议不要关闭。警告的具体文字可能因 Windows 版本而异。</p>
+
+            <h3>确认文件是原始文件</h3>
+            <p>没有签名时，确认文件未被他人修改的方法，是将它的 SHA-256 指纹与 GitHub 官方发布页面上文件旁显示的值进行比较。在保存文件的文件夹中，用 PowerShell 运行：</p>
+            <pre translate="no"><code translate="no">Get-FileHash .\HoursLived-Setup.msi -Algorithm SHA256</code></pre>
+            <p>文件名仅为示例：请换成你下载的文件名。 如果两个值不完全相同，请不要安装，删除该文件并写信告诉我。</p>
+
+            <h2>Linux</h2>
+            <p><code translate="no">.deb</code> 软件包同样没有签名。安装前请用同样的方法校验：</p>
+            <pre translate="no"><code translate="no">sha256sum HoursLived.deb</code></pre>
+            <p>然后用以下命令安装：</p>
+            <pre translate="no"><code translate="no">sudo apt install ./HoursLived.deb</code></pre>
+            <p>在 Linux 上，应用会请你设置一个密码来保护你的日记，因为 Linux 没有与 Windows 相当的受保护密钥存储。请妥善保管：没有它，数据就无法打开。</p>
+
+            <h2>写信给我</h2>
+            <p>如果指纹不一致、安装程序行为异常，或本页内容有误，请写信到 <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>。每一封信我都会亲自阅读。</p>
+            <p class="lead">最后更新：2026 年 11 月</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Evanescent Echo</a>
+            <span>·</span>
+            <a href="trust.html" id="footer-trust">Your data and your access</a>
+            <span>·</span>
+            <a href="install.html" id="footer-install">Installing on Windows and Linux</a>
+            <span>·</span>
+            <a translate="no" href="mailto:support.evanescentecho@gmail.com">support.evanescentecho@gmail.com</a>
+        </div>
+        <p id="footer-copy">© 2026 Evanescent Echo. All rights reserved. Independently crafted.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
