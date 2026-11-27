@@ -2,17 +2,20 @@
 function setTheme(theme) {
     const html = document.documentElement;
     if (theme === 'system') {
+        localStorage.removeItem('theme');
         localStorage.removeItem('portal-theme');
         const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         html.setAttribute('data-theme', isDark ? 'dark' : 'light');
     } else {
-        localStorage.setItem('portal-theme', theme);
+        // Same key as the project websites: one choice for the whole suite
+        localStorage.setItem('theme', theme);
+        localStorage.removeItem('portal-theme');
         html.setAttribute('data-theme', theme);
     }
 }
 
 function initTheme() {
-    const saved = localStorage.getItem('portal-theme');
+    const saved = localStorage.getItem('theme') || localStorage.getItem('portal-theme');
     const select = document.getElementById('theme-select');
     if (saved) {
         setTheme(saved);
@@ -487,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (!localStorage.getItem('portal-theme')) {
+        if (!localStorage.getItem('theme')) {
             setTheme('system');
         }
     });
